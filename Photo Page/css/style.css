@@ -1,0 +1,96 @@
+@charset "utf-8";
+
+body {
+	background-color: #f9ebde;
+}
+
+#wrap {
+	width: 1500px;
+	margin: 0 auto;
+	padding: 20px;
+	/* border: 2px solid #815854;
+	border-top-width: 0;
+	border-bottom-width: 0; */
+}
+
+/* 헤더 부분 */
+
+header > nav > .gnb {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	width: 1500px;
+
+	border-bottom: 2px dotted #000;
+}
+header > nav > .gnb > li {
+	width: 200px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	background-color: #815854;
+}
+
+header > nav > ul.gnb > li:hover {
+	color: #815854;
+	font-weight: 600;
+
+	background-color: #f9ebde;
+	outline: 3px solid #815854;
+}
+header > nav > .gnb > li > a {
+	display: block;
+	color: #f9ebde;
+	font-weight: 600;
+	font-size: 20px;
+}
+header > nav > .gnb > li > a:hover {
+	color: #815854;
+}
+/* 섹션 */
+
+/* 큰이미지 */
+section {
+	text-align: center;
+	margin: 20px 0 20px;
+}
+section > .frame {
+	width: 1400px;
+	height: 600px;
+	margin: 0 auto;
+}
+section > .frame > img {
+	/* display: block; */
+	max-width: 1400px;
+	max-height: 600px;
+	outline: 3px solid #815854;
+}
+
+/* 하단 작은 이미지 */
+section > .bar {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	margin-top: 20px;
+
+	border-top: 2px dotted #815854;
+}
+section > .bar > li {
+	width: 200px;
+	height: 150px;
+}
+
+section > .bar > li > a {
+	display: block;
+	height: 100%;
+}
+section > .bar > li > a > img {
+	max-width: 200px;
+	max-height: 150px;
+}
+
+section > .bar > li > a:hover {
+	border-bottom: 2px solid #815854;
+}
