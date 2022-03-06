@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+#wrap {
+	text-align: center;
+	width: 1000px;
+	margin: 0 auto;
+}
+
+h1 {
+	margin: 40px 0;
+	text-align: center;
+}
+
+input {
+	width: 50px;
+	height: 50px;
+	margin: 10px;
+	font-size: 30px;
+	text-align: center;
+}
+
+div > input {
+	width: 50px;
+	height: 50px;
+	margin: 10px;
+	font-size: 30px;
+	text-align: center;
+}
+
+button {
+	/* position: absolute; */
+}

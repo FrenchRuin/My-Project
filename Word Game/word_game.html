@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      background-color: #50586C;
+    }
+
+    #wrap {
+      text-align: center;
+      width: 1000px;
+      margin: 0 auto;
+
+    }
+
+    h1 {
+      margin: 40px 0;
+
+      color: #DCE2F0;
+      font-size: 50px;
+      text-align: center;
+    }
+
+    div {
+      text-align: center;
+    }
+
+    input {
+      width: 50px;
+      height: 50px;
+      margin: 10px;
+      font-size: 30px;
+      text-align: center;
+    }
+
+    div>input {
+      width: 50px;
+      height: 50px;
+      margin: 10px;
+      font-size: 30px;
+      text-align: center;
+    }
+
+    button {
+      width: 50px;
+      height: 50px;
+    }
+
+    span {
+      color: #DCE2F0;
+      font-size: 25px;
+
+    }
+
+    address {
+      color: #DCE2F0;
+    }
+  </style>
+  <title>Word</title>
+</head>
+
+<body>
+  <div id="wrap">
+    <h1>Word Game</h1>
+
+
+    <div>
+      <input type="text">
+      <input type="text">
+      <input type="text">
+      <input type="text">
+      <input type="text">
+      <button>제출</button>
+    </div>
+    <hr>
+    <address>새로고침시 단어가 초기화됩니다</address>
+    <hr>
+    <address>회색 : 없는단어</br>
+      노란색 : 있는단어</br>
+      초록색 : 자리맞는단어</address>
+  </div>
+
+
+</body>
+<script>
+
+  const answer = ['basic', 'beach', 'begin', 'below', 'bench', 'black', 'blind', 'blood', 'brain', 'bread', 'break', 'bring', 'brown', 'build', 'carry', 'catch'
+    , 'chair', 'check', 'child', 'chose', 'class', 'clean', 'clear', 'clock', 'close', 'count', 'cover', 'cream', 'crime', 'cross', 'crowd', 'dance', 'dream', 'dress', 'early', 'earth', 'empty', 'enjoy', 'enter', 'error', 'event', 'every', 'exist', 'false', 'field', 'fight', 'first', 'floor', 'focus', 'force', 'frame', 'fresh', 'front', 'fruit', 'funny', 'glass', 'grade', 'great', 'green', 'group', 'guess', 'happy', 'heart', 'heavy', 'horse', 'house', 'human', 'image', 'large', 'later', 'laugh', 'learn', 'leave']
+
+  let num = (Math.floor(Math.random() * answer.length))
+
+  let tdAnswer = answer[num]
+
+  const $input = document.querySelectorAll('input')
+  const $btn = document.querySelector('button')
+
+  $btn.addEventListener('click', function () {
+
+
+    for (let i = 0; i < 5; i++) {
+
+      if ($input[i].value == tdAnswer[i]) {
+        $input[i].style.backgroundColor = 'green';
+
+
+      } else if (tdAnswer.includes($input[i].value)) {
+        $input[i].style.backgroundColor = 'yellow';
+      } else {
+        $input[i].style.backgroundColor = 'lightgrey';
+      }
+    }
+
+  })
+
+</script>
+
+</html>
