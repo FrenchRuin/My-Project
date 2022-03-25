@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width">
+  <title>TODO</title>
+
+  <style>
+    #wrap {
+
+      width: 600px;
+      margin: 0 auto;
+      /* text-align: center; */
+    }
+
+    h1 {
+      margin: 40px 0;
+      text-align: center;
+    }
+
+    div {
+      position: relative;
+    }
+
+    input {
+      width: 500px;
+      height: 60px;
+      padding: 10px;
+      font-size: 20px;
+    }
+
+    button {
+      position: absolute;
+      right: 0;
+      top: 2px;
+      width: 70px;
+      height: 70px;
+    }
+
+    div.plan {
+
+      height: 500px;
+      margin-top: 20px;
+      overflow-y: scroll;
+      border: 1px solid #000;
+
+
+    }
+  </style>
+</head>
+
+<body>
+  <div id="wrap">
+    <h1>To do List</h1>
+    <div>
+      <input type="text">
+      <button></button>
+    </div>
+    <div class="plan">
+
+    </div>
+  </div>
+
+  <script>
+    const btn = document.querySelector('button')
+    const input = document.querySelector('input')
+
+    let todo = input.textContent;
+
+    btn.addEventListener('click', function () {
+
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,124 @@
+@charset "utf-8";
+
+header {
+	position: fixed; /*relative 로 줬었*/
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 66px;
+	background-color: #fff;
+	border-bottom: 3px solid #000;
+	opacity: .5;
+}
+
+header > h1.logo {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 200px;
+	/* border: 1px solid black; */
+}
+header > h1.logo > a {
+	display: block;
+	height: 66px;
+	font-size: 20px;
+	line-height: 66px;
+	text-align: center;
+}
+
+header > nav {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: calc(100% - 200px);
+	/* background-color: yellow; */
+}
+header > nav > .gnb {
+	display: flex;
+	flex-flow: row nowrap;
+}
+header > nav > .gnb > li {
+	width: calc(100% / 6);
+}
+header > nav > .gnb > li.on > a,
+header > nav > .gnb > li:hover > a {
+	color: blue;
+	font-weight: 600;
+}
+header > nav > .gnb > li > a {
+	display: block;
+	height: 66px;
+	line-height: 66px;
+	text-align: center;
+	/* background-color: pink; */
+}
+
+.visual {
+	height: 560px;
+	margin-top: 69px;
+	text-indent: -9999px;
+	background-image: url(./../images/visual.jpg);
+	background-size: cover;
+	background-size: contain;
+}
+
+article {
+	height: 700px;
+	font-size: 150px;
+	line-height: 700px;
+	text-align: center;
+}
+
+article:nth-of-type(odd) {
+	background-color: skyblue;
+}
+article:nth-of-type(even) {
+	background-color: pink;
+}
+
+article:nth-of-type(1) {
+	height: 800px;
+}
+article:nth-of-type(2) {
+	height: 650px;
+}
+article:nth-of-type(3) {
+	height: 860px;
+}
+article:nth-of-type(4) {
+	height: 900px;
+}
+article:nth-of-type(5) {
+	height: 700px;
+}
+article:nth-of-type(6) {
+	height: 800px;
+}
+
+footer > address {
+	height: 100px;
+	line-height: 100px;
+	text-align: center;
+	background-color: #eee;
+}
+
+aside {
+	position: fixed;
+	right: 1em;
+	bottom: 1em;
+}
+
+aside > a {
+	display: block;
+	width: 28px;
+	height: 28px;
+
+	line-height: 28px;
+	text-align: center;
+
+	background-color: #03a63c;
+}
+
+aside > a > i {
+	color: white;
+}
