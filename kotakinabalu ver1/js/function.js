@@ -28,9 +28,17 @@ $(document).ready(function () {
       }
     }
   });
-  $('h1.logo>a', 'aside>a').on('click', function (evt) {
+  $('header>h1.logo>a').on('click', function (evt) {
     evt.preventDefault();
-    $('html,body').stop().animate({ scrollTop: 0 })
+    $('html,body').stop().animate({
+      scrollTop: 0
+    })
+  })
+  $('aside>a').on('click', function (evt) {
+    evt.preventDefault();
+    $('html,body').stop().animate({
+      scrollTop: 0
+    })
   })
   $(window).on('load', function () {
     $('html,body').animate({
@@ -97,7 +105,10 @@ $(document).ready(function () {
     }
   });
 
-
+  // 상단 아이콘 //
+  $('.icon>a').on('click', function (evt) {
+    evt.preventDefault();
+  })
 
 
 

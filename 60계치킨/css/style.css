@@ -1,0 +1,72 @@
+@charset "utf-8";
+
+.slides {
+	overflow: hidden;
+	position: relative;
+	margin: 0 auto;
+	width: 1130px;
+	height: 600px;
+	border: 1px solid #000;
+}
+
+.slides > .slides-container {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: calc(1130px * 10);
+	display: flex;
+}
+.slides > .slides-container > .frame {
+	position: relative;
+}
+
+.slides > .slides-container > .frame > iframe {
+	position: absolute;
+	left: calc(50% - 320px);
+	bottom: 56px;
+	border: none;
+}
+
+.slides > nav {
+	position: absolute;
+	bottom: 5px;
+	left: calc(50% - 125px);
+}
+.slides > nav > ul {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-around;
+	width: 250px;
+}
+.slides > nav > ul > li {
+	width: 20px;
+}
+.slides > nav > ul > li > a {
+	display: block;
+	height: 20px;
+	background-color: black;
+	border-radius: 50%;
+}
+.slides > nav > ul > li.on > a,
+.slides > nav > ul > li.on {
+	width: 30px;
+	border-radius: 25%;
+	background-color: orange;
+}
+
+.slides > a {
+	position: absolute;
+	display: block;
+	width: 40px;
+	height: 150px;
+	background-color: #ddd;
+}
+
+.slides > .next {
+	top: calc(50% - 75px);
+	right: 0;
+}
+.slides > .prev {
+	left: 0;
+	top: calc(50% - 75px);
+}
