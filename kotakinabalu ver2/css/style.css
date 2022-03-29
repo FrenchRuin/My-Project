@@ -9,8 +9,9 @@ header {
 	width: 100%;
 	height: 70px;
 	background-color: orange;
-	border-bottom: 3px solid black;
+	border-bottom: 3px solid #fff;
 	z-index: 100;
+	opacity: .7;
 }
 header > h1.logo {
 	margin: 0 auto;
@@ -33,10 +34,9 @@ header > .gnb {
 	position: absolute;
 	right: 1em;
 	top: 150px;
+	background-color: orange;
 }
-header > .gnb > ul {
-	/* background-color: orange; */
-}
+
 header > .gnb > ul > li {
 	width: 100px;
 	text-align: right;
@@ -44,18 +44,25 @@ header > .gnb > ul > li {
 header > .gnb > ul > li > a {
 	display: block;
 	height: 40px;
+	color: white;
 	line-height: 40px;
 	font-size: 15px;
+	font-weight: 600;
 }
+header > .gnb > ul > li.on > a,
 header > .gnb > ul > li:hover > a {
-	border-left: 3px solid black;
+	border-bottom: 2px solid #fff;
+	box-sizing: border-box;
 }
 
 /* 섹션 article크기 임시지정 */
 section > article {
 	height: 800px;
-	border: 1px solid #000;
+	/* border: 1px solid #000; */
 	/* background-color: orange; */
+}
+section > article:nth-child(odd) {
+	background-color: orange;
 }
 
 /* 비주얼 */
@@ -89,26 +96,256 @@ section > article {
 /* article 1 인트로 */
 
 section > #introduce {
+	position: relative;
 	display: flex;
-	justify-content: space-around;
+	flex-flow: row nowrap;
+	justify-content: space-evenly;
+	margin: 0 auto;
 }
 section > #introduce > .pic {
+	position: relative;
+	top: calc(50% - 300px);
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
+
 	width: 600px;
+	height: 600px;
 }
 section > #introduce > .pic > .frame {
+	outline: 1px solid #eee;
 }
 section > #introduce > .pic > .frame > img {
 	display: block;
 	width: 300px;
 	height: 300px;
 }
+
+section > #introduce > .pic > .frame:hover > img {
+	transform: scale(1.2);
+	transition: all .4s ease-in-out;
+	border: 3px solid #eee;
+	box-sizing: border-box;
+}
 section > #introduce > .explain {
-	width: 800px;
+	position: relative;
+	top: calc(50% - 300px);
+	width: 600px;
+	height: 600px;
 }
 section > #introduce > .explain > h2 {
+	margin-bottom: 20px;
+	font-size: 40px;
 }
 section > #introduce > .explain > p {
+	line-height: 1.6;
+	font-size: 25px;
+}
+
+/* 섹션2 travel */
+#travel {
+	padding-top: 100px;
+}
+
+#travel > .lnb > ul {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	width: 600px;
+	margin: 0 auto;
+}
+#travel > .lnb > ul > li {
+	/* width: 150px; */
+	text-align: center;
+}
+#travel > .lnb > ul > li > a {
+	display: block;
+	height: 50px;
+	color: orange;
+	font-size: 24px;
+	font-weight: 600;
+
+	line-height: 50px;
+}
+#travel > .lnb > ul > li.on > a,
+#travel > .lnb > ul > li:hover > a {
+	border-bottom: 3px solid orange;
+	box-sizing: border-box;
+}
+#travel > .pic {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-evenly;
+	margin-top: 90px;
+}
+
+#travel > .pic > .frame > img {
+	display: block;
+	height: 300px;
+	width: 300px;
+}
+
+#travel > .pic > .frame:hover > img {
+	transform: scale(1.2);
+	transition: all .4s ease-in-out;
+}
+
+#travel > .explain {
+	width: 1000px;
+	text-align: center;
+	margin: 70px auto;
+}
+#travel > .explain > p {
+	font-size: 20px;
+}
+
+/* 섹션 3 leisure */
+
+#leisure {
+	padding-top: 20px;
+}
+#leisure > h2 {
+	height: 90px;
+	line-height: 90px;
+	text-align: center;
+	font-size: 30px;
+	color: #fff;
+	margin: px 0;
+}
+#leisure > .slides {
+	margin: 0 auto;
+	overflow: hidden;
+	display: flex;
+	flex-flow: row nowrap;
+	width: 1400px;
+	border: 1px solid #eee;
+}
+#leisure > .slides > .frame {
+	width: 450px;
+	height: 600px;
+	background-size: cover;
+	background-position: -90px 0;
+}
+#leisure > .slides > .frame:hover {
+	width: 1400px;
+	transition: all .4s ease-in-out;
+}
+#leisure > .slides > .frame:nth-child(1) {
+	background-image: url(./../images/snork.jpg);
+}
+#leisure > .slides > .frame:nth-child(2) {
+	background-image: url(./../images/snork2.jpg);
+}
+#leisure > .slides > .frame:nth-child(3) {
+	background-image: url(./../images/sail.jpg);
+}
+#leisure > .slides > .frame:nth-child(4) {
+	background-image: url(./../images/sail2.jpg);
+}
+#leisure > .slides > .frame:nth-child(5) {
+	background-image: url(./../images/snork3.jpg);
+}
+
+/* 섹션 4 food */
+#food {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+}
+#food > nav {
+	width: 400px;
+}
+#food > nav > ul {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-around;
+	height: 500px;
+	margin-top: 100px;
+}
+
+#food > nav > ul > li > a {
+	display: block;
+	height: 50px;
+	color: orange;
+	line-height: 50px;
+	font-size: 25px;
+	text-align: center;
+	font-weight: 600;
+}
+#food > nav > ul > li.on > a,
+#food > nav > ul > li:hover > a {
+	border-right: 3px solid orange;
+	box-sizing: border-box;
+}
+#food > .pic {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	width: 800px;
+	height: 700px;
+	margin-top: 50px;
+}
+
+#food > .pic > .frame > img {
+	display: block;
+	width: 300px;
+	height: 300px;
+	border: 1px solid #eee;
+	box-sizing: border-box;
+}
+#food > .pic > .frame:last-child > img {
+	width: 600px;
+	height: 400px;
+}
+
+/* 섹션 5 tips */
+
+#tips {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-evenly;
+}
+#tips > div {
+	margin-top: 90px;
+	width: 800px;
+}
+#tips > div > h2 {
+	color: #fff;
+	font-size: 40px;
+	margin-bottom: 20px;
+}
+#tips > div > p {
+	font-size: 20px;
+	line-height: 1.6;
+	text-align: justify;
+}
+#tips > .frame {
+	margin: 100px 0 0 10px;
+}
+#tips > .frame > img {
+	display: block;
+	width: 700px;
+	border: 1px solid #eee;
+}
+/* 푸터 */
+
+footer > address {
+	height: 150px;
+	line-height: 150px;
+	text-align: center;
+	font-size: 15px;
+	font-weight: 600;
+}
+
+/* 어사이드 */
+aside {
+	position: fixed;
+	right: 1em;
+	bottom: 1em;
+	background-color: orange;
+}
+aside > a {
+}
+aside > a > i {
+	color: #fff;
 }

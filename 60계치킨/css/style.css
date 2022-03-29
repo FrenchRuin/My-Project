@@ -6,7 +6,7 @@
 	margin: 0 auto;
 	width: 1130px;
 	height: 600px;
-	border: 1px solid #000;
+	/* border: 1px solid #000; */
 }
 
 .slides > .slides-container {
@@ -49,9 +49,10 @@
 }
 .slides > nav > ul > li.on > a,
 .slides > nav > ul > li.on {
-	width: 30px;
-	border-radius: 25%;
+	width: 40px;
+	border-radius: 40%;
 	background-color: orange;
+	transition: all 0.2s;
 }
 
 .slides > a {
