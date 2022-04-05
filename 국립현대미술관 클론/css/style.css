@@ -1,0 +1,178 @@
+@charset "utf-8";
+* {
+	font-family: 'Spoqa Han Sans Neo', "맑은 고딕", sans-serif;
+}
+
+#wrap {
+	width: 85%;
+	margin: 0 auto;
+}
+
+header {
+	position: relative;
+
+	/* height: 500px; */
+	margin-top: 30px;
+
+	/* border-bottom: 1px solid #000; */
+	background-color: #fff;
+	z-index: 100;
+}
+header > .logo {
+	width: 309px;
+	line-height: 72px;
+}
+header > .logo > a {
+	display: block;
+	height: 72px;
+	text-indent: -9999px;
+	background-image: url(./../images/logo.png);
+}
+
+header > .info {
+	position: absolute;
+	right: 0;
+	top: 0;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	width: 450px;
+	height: 100px;
+}
+header > .info > .join {
+	width: 100px;
+	height: 100px;
+	border: 1px solid #000;
+	border-radius: 50%;
+	background-color: black;
+}
+header > .info > .join > a {
+	display: block;
+	margin-top: 35px;
+	color: #fff;
+	font-size: 16px;
+	text-align: center;
+	font-weight: 600;
+}
+header > .info > .login {
+}
+header > .info > .login > a {
+	display: block;
+	line-height: 100px;
+	color: #000;
+	font-size: 14px;
+}
+
+header > .info > .lang {
+	color: #000;
+	line-height: 100px;
+}
+header > .info > .lang > select {
+	border: none;
+}
+
+header > .info > .move {
+	line-height: 100px;
+}
+
+header > .info > .move > button {
+	width: 50px;
+	height: 30px;
+	font-weight: 600;
+	background-color: #fff;
+	border: 1px solid #000;
+	border-radius: 40%;
+}
+
+/* 네비게이션 */
+header > nav {
+	position: relative;
+	/* width: 100%; */
+	margin-top: 50px;
+}
+header > nav > .gnb {
+	/* position: absolute; */
+	display: flex;
+	justify-content: left;
+	padding-bottom: 40px;
+	border-bottom: 1px solid #000;
+}
+header > nav > .gnb > li {
+	margin-right: 50px;
+}
+header > nav > .gnb > li > a {
+	display: block;
+	color: #000;
+
+	font-weight: 600;
+	font-size: 30px;
+	text-align: center;
+}
+
+header > nav > .gnb > li > a + .lnb {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 50px;
+	width: 100%;
+	height: 50px;
+	/* border-bottom: 1px solid #000; */
+}
+header > nav > .gnb > li > .lnb > ol {
+	display: flex;
+	justify-content: left;
+}
+header > nav > .gnb > li > .lnb > ol > li {
+	margin-right: 30px;
+}
+
+header > nav > .gnb > li > .lnb > ol > li > a {
+	display: block;
+	color: #000;
+	font-size: 30px;
+	font-weight: 600;
+}
+
+header > nav > .search {
+	display: block;
+	position: absolute;
+	right: 1em;
+	top: 0;
+	width: 26px;
+	height: 26px;
+	text-indent: -9999px;
+	background-image: url(./../images/search-ico.png);
+}
+
+.shadow {
+	display: none;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	background-color: #ddd;
+	width: 100%;
+	height: 73%; /* 픽셀 재정의 필요*/
+	opacity: 0.5;
+	z-index: -100;
+	border-top: 1px solid #000;
+}
+
+.search-box {
+	display: none;
+	width: 100%;
+
+	height: 50px;
+}
+.search-box > input {
+	width: 80%;
+	height: 50px;
+	border: none;
+}
+.search-box > button {
+	margin-left: 100px;
+	width: 150px;
+	height: 60px;
+	border: 1px solid #000;
+	background-color: #fff;
+	border-radius: 35px;
+}
