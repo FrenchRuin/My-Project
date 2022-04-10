@@ -1,0 +1,385 @@
+body {
+  font-family: "SSTPro", "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+body #wrap header {
+  position: absolute;
+  width: 100%;
+  height: 80px;
+  background-color: #000;
+}
+
+body #wrap header > h1.logo {
+  position: absolute;
+  top: calc(50% - 10px);
+  left: 20px;
+  width: 120px;
+}
+
+body #wrap header > h1.logo > a {
+  display: block;
+  height: 20px;
+  text-indent: -9999px;
+  background-image: url(./../images/logo.png);
+}
+
+body #wrap header nav {
+  width: 1000px;
+  margin: 0 auto;
+  background-color: #000;
+}
+
+body #wrap header nav > .gnb {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  height: 80px;
+  z-index: 200;
+}
+
+body #wrap header nav > .gnb > li {
+  width: 200px;
+  height: 80px;
+}
+
+body #wrap header nav > .gnb > li:hover > a {
+  color: #5865f5;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+body #wrap header nav > .gnb > li:hover > a:after {
+  position: absolute;
+  display: block;
+  width: 198px;
+  height: 0;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #5865f5;
+  content: '';
+}
+
+body #wrap header nav > .gnb > li:hover > a + .lnb {
+  background-color: rgba(255, 255, 255, 0.115);
+}
+
+body #wrap header nav > .gnb > li > a {
+  display: block;
+  color: #fff;
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+  line-height: 80px;
+}
+
+body #wrap header nav > .gnb > li .lnb {
+  position: absolute;
+  top: -400px;
+  height: 392px;
+  padding-top: 10px;
+  z-index: 100;
+}
+
+body #wrap header nav > .gnb > li .lnb > li {
+  width: 200px;
+}
+
+body #wrap header nav > .gnb > li .lnb > li:hover > a {
+  color: #5865f5;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+body #wrap header nav > .gnb > li .lnb > li > a {
+  display: block;
+  height: 60px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 50px;
+  text-align: center;
+}
+
+body #wrap header .side {
+  position: absolute;
+  right: 30px;
+  top: calc(50% - 12px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row column;
+          flex-flow: row column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 120px;
+}
+
+body #wrap header .side > a {
+  display: block;
+  width: 24px;
+  height: 24px;
+  text-indent: -9999px;
+}
+
+body #wrap header .side > a.search {
+  background-image: url(./../images/ic_search.png);
+}
+
+body #wrap header .side > a.mypage {
+  background-image: url(./../images/ic_mypage.png);
+}
+
+body #wrap header .side > a.cart {
+  background-image: url(./../images/ic_cart.png);
+}
+
+body #wrap header .side > a.cart:after {
+  position: absolute;
+  right: -5px;
+  display: block;
+  width: 0;
+  height: 0;
+  border-width: 8px;
+  border-style: solid;
+  border-radius: 50%;
+  border-color: #5865f5;
+  content: '';
+}
+
+body #wrap header .lnb_shadow {
+  position: absolute;
+  top: -400px;
+  left: 0;
+  width: 100%;
+  height: 482px;
+  background-color: #000;
+}
+
+body #wrap section {
+  position: relative;
+  top: 82px;
+}
+
+body #wrap section > #slides {
+  height: 855px;
+}
+
+body #wrap section > #slides > .slides {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+}
+
+body #wrap section > #slides > .slides > .slides-container {
+  position: absolute;
+  left: -500%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  width: calc(15 * 100%);
+  height: 100%;
+}
+
+body #wrap section > #slides > .slides > .slides-container > p {
+  position: relative;
+  display: block;
+  height: 100%;
+  width: calc(100% / 15);
+  background-position: center center;
+}
+
+body #wrap section > #slides > .slides > .slides-container > p > video {
+  position: relative;
+  z-index: 0;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+
+body #wrap section > #slides > .slides > .slides-container > .slide-4 {
+  background-image: url(./../images/PC_LXPS-S3.jpg);
+}
+
+body #wrap section > #slides > .slides > .slides-container > .slide-5 {
+  background-image: url(./../images/PC_ZV-1.jpg);
+}
+
+body #wrap section > #slides > .slides > a {
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  text-indent: -9999px;
+}
+
+body #wrap section > #slides > .slides > .next {
+  right: 0;
+  cursor: url(./../images/arrow_r.1db549d7.cur), auto;
+}
+
+body #wrap section > #slides > .slides > .prev {
+  left: 0;
+  cursor: url(./../images/arrow_l.935a967c.cur), auto;
+}
+
+@-webkit-keyframes slidein {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes slidein {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+body #wrap section #main-product {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  background-color: #f4f4f4;
+}
+
+body #wrap section #main-product > .slides-main {
+  position: relative;
+  width: 950px;
+  overflow: hidden;
+}
+
+body #wrap section #main-product > .slides-main > .main-slides-container {
+  position: relative;
+  left: -3800px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  width: calc(950px * 12);
+}
+
+body #wrap section #main-product > .slides-main > .main-slides-container > p {
+  display: block;
+  width: 950px;
+  height: 1000px;
+  background-position: center center;
+  background-size: cover;
+}
+
+body #wrap section #main-product > .slides-main > .main-slides-container > p.slide-1 {
+  background-image: url(./../images/main_1.jpg);
+}
+
+body #wrap section #main-product > .slides-main > .main-slides-container > p.slide-2 {
+  background-image: url(./../images/main_2.jpg);
+}
+
+body #wrap section #main-product > .slides-main > .main-slides-container > p.slide-3 {
+  background-image: url(./../images/main_3.jpg);
+}
+
+body #wrap section #main-product > .slides-main > .main-slides-container > p.slide-4 {
+  background-image: url(./../images/main_4.jpg);
+}
+
+body #wrap section #main-product > .slides-sub {
+  position: relative;
+  width: calc(100% - 950px);
+  margin-left: 40px;
+  overflow: hidden;
+}
+
+body #wrap section #main-product > .slides-sub > .sub-slides-container {
+  position: relative;
+  left: -2440px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-left: 50px;
+  padding-top: 60px;
+  width: 7210px;
+}
+
+body #wrap section #main-product > .slides-sub > .sub-slides-container > div {
+  line-height: 1.6;
+  width: 500px;
+}
+
+body #wrap section #main-product > .slides-sub > .sub-slides-container > div > span {
+  display: block;
+  font-size: 45px;
+  font-weight: 800;
+}
+
+body #wrap section #main-product > .slides-sub > .sub-slides-container > div > span:nth-of-type(2) {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+body #wrap section #main-product > .slides-sub > .sub-slides-container > div > span:nth-of-type(3) {
+  color: #666666;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+body #wrap section #main-product > .slides-sub > .sub-slides-container > div > .frame {
+  display: block;
+  overflow: hidden;
+  width: 500px;
+  height: 500px;
+  margin: 60px 0 20px;
+}
+
+body #wrap section #main-product > .slides-sub > .sub-slides-container > div > .frame > img {
+  background-color: #fff;
+  display: block;
+  width: 500px;
+}
+
+body #wrap section #main-product > .slides-sub > .sub-slides-container > div > .frame > img:hover {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+body #wrap section #main-product > .pro-next {
+  position: absolute;
+  right: 0;
+  display: block;
+  width: 15%;
+  height: 100%;
+  cursor: url(./../images/arrow_r.1db549d7.cur), auto;
+}
+/*# sourceMappingURL=style.css.map */
