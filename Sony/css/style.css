@@ -14,6 +14,7 @@ body #wrap header > h1.logo {
   top: calc(50% - 10px);
   left: 20px;
   width: 120px;
+  z-index: 30;
 }
 
 body #wrap header > h1.logo > a {
@@ -23,13 +24,25 @@ body #wrap header > h1.logo > a {
   background-image: url(./../images/logo.png);
 }
 
-body #wrap header nav {
+body #wrap header > .lnb_shadow {
+  position: absolute;
+  top: -400px;
+  left: 0;
+  width: 100%;
+  height: 482px;
+  background-color: #000;
+  z-index: 10;
+}
+
+body #wrap header > nav {
+  position: relative;
   width: 1000px;
   margin: 0 auto;
   background-color: #000;
+  z-index: 20;
 }
 
-body #wrap header nav > .gnb {
+body #wrap header > nav > .gnb {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -42,18 +55,18 @@ body #wrap header nav > .gnb {
   z-index: 200;
 }
 
-body #wrap header nav > .gnb > li {
+body #wrap header > nav > .gnb > li {
   width: 200px;
   height: 80px;
 }
 
-body #wrap header nav > .gnb > li:hover > a {
+body #wrap header > nav > .gnb > li:hover > a {
   color: #5865f5;
   -webkit-transition: all .3s;
   transition: all .3s;
 }
 
-body #wrap header nav > .gnb > li:hover > a:after {
+body #wrap header > nav > .gnb > li:hover > a:after {
   position: absolute;
   display: block;
   width: 198px;
@@ -64,11 +77,11 @@ body #wrap header nav > .gnb > li:hover > a:after {
   content: '';
 }
 
-body #wrap header nav > .gnb > li:hover > a + .lnb {
+body #wrap header > nav > .gnb > li:hover > a + .lnb {
   background-color: rgba(255, 255, 255, 0.115);
 }
 
-body #wrap header nav > .gnb > li > a {
+body #wrap header > nav > .gnb > li > a {
   display: block;
   color: #fff;
   font-weight: 600;
@@ -77,25 +90,24 @@ body #wrap header nav > .gnb > li > a {
   line-height: 80px;
 }
 
-body #wrap header nav > .gnb > li .lnb {
+body #wrap header > nav > .gnb > li .lnb {
   position: absolute;
   top: -400px;
   height: 392px;
   padding-top: 10px;
-  z-index: 100;
 }
 
-body #wrap header nav > .gnb > li .lnb > li {
+body #wrap header > nav > .gnb > li .lnb > li {
   width: 200px;
 }
 
-body #wrap header nav > .gnb > li .lnb > li:hover > a {
+body #wrap header > nav > .gnb > li .lnb > li:hover > a {
   color: #5865f5;
   -webkit-transition: all .3s;
   transition: all .3s;
 }
 
-body #wrap header nav > .gnb > li .lnb > li > a {
+body #wrap header > nav > .gnb > li .lnb > li > a {
   display: block;
   height: 60px;
   color: #fff;
@@ -120,6 +132,7 @@ body #wrap header .side {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 120px;
+  z-index: 20;
 }
 
 body #wrap header .side > a {
@@ -152,15 +165,6 @@ body #wrap header .side > a.cart:after {
   border-radius: 50%;
   border-color: #5865f5;
   content: '';
-}
-
-body #wrap header .lnb_shadow {
-  position: absolute;
-  top: -400px;
-  left: 0;
-  width: 100%;
-  height: 482px;
-  background-color: #000;
 }
 
 body #wrap section {
@@ -207,7 +211,7 @@ body #wrap section > #slides > .slides > .slides-container > p {
 }
 
 body #wrap section > #slides > .slides > .slides-container > p > video {
-  position: relative;
+  position: absolute;
   z-index: 0;
   -o-object-fit: fill;
      object-fit: fill;
@@ -239,22 +243,33 @@ body #wrap section > #slides > .slides > .prev {
   cursor: url(./../images/arrow_l.935a967c.cur), auto;
 }
 
-@-webkit-keyframes slidein {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 100%;
-  }
+body #wrap section > #slides > .slides > .indicator {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 300px;
 }
 
-@keyframes slidein {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 100%;
-  }
+body #wrap section > #slides > .slides > .indicator > a {
+  display: block;
+  width: 300px;
+  height: 80px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  color: #666666;
+}
+
+body #wrap section > #slides > .slides > .indicator > a > p {
+  display: inline;
+  color: #fff;
+}
+
+body #wrap section > #slides > .slides > .indicator > a > span {
+  display: inline-block;
+  width: 40px;
+  text-indent: -9999px;
+  border-bottom: 2px solid #666666;
 }
 
 body #wrap section #main-product {
@@ -384,6 +399,7 @@ body #wrap section #main-product > .pro-next {
   display: block;
   width: 15%;
   height: 100%;
+  text-indent: -9999px;
   cursor: url(./../images/arrow_r.1db549d7.cur), auto;
 }
 
@@ -482,8 +498,7 @@ body #wrap section #event > .event-menu > ul > li > a {
   display: block;
   background-image: url(./../images/Main-Event-Banner-S\_1.jpg);
   background-position: center center;
-  -webkit-transition: all .4s;
-  transition: all .4s;
+  background-size: cover;
 }
 
 body #wrap section #event > .event-menu > ul > li > a:hover {
@@ -504,6 +519,185 @@ body #wrap section #event > .event-menu > ul > li > a > span:last-child {
   font-size: 18px;
   color: #666666;
   font-weight: 400;
+}
+
+body #wrap section > #product {
+  width: 100%;
+  height: 1250px;
+  background-color: #f4f4f4;
+}
+
+body #wrap section > #product > h2 {
+  height: 150px;
+  text-align: center;
+  line-height: 150px;
+  font-size: 40px;
+}
+
+body #wrap section > #product > .product-slides {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  height: 400px;
+  margin-bottom: 20px;
+}
+
+body #wrap section > #product > .product-slides > li {
+  position: relative;
+  width: calc(100% / 4);
+  border-right: 1px solid #eee;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+@-webkit-keyframes slide {
+  0% {
+    background-position: 200px center;
+  }
+  100% {
+    background-position: center center;
+  }
+}
+
+@keyframes slide {
+  0% {
+    background-position: 200px center;
+  }
+  100% {
+    background-position: center center;
+  }
+}
+
+body #wrap section > #product > .product-slides > li:hover {
+  background-color: #5865f5;
+}
+
+body #wrap section > #product > .product-slides > li:hover > a {
+  -webkit-animation: slide .3s forwards;
+          animation: slide .3s forwards;
+}
+
+body #wrap section > #product > .product-slides > li:nth-child(2) > a {
+  background-image: url(./../images/main_prod_2.png);
+}
+
+body #wrap section > #product > .product-slides > li:nth-child(3) > a {
+  background-image: url(./../images/main_prod_3.png);
+}
+
+body #wrap section > #product > .product-slides > li:nth-child(4) > a {
+  background-image: url(./../images/main_prod_4.png);
+}
+
+body #wrap section > #product > .product-slides > li > a {
+  display: block;
+  background-image: url(./../images/main_prod_1.png);
+  width: 100%;
+  height: 100%;
+  text-indent: -9999px;
+  background-position: 200px center;
+  background-repeat: no-repeat;
+}
+
+body #wrap section > #product > .product-slides > li > span {
+  position: absolute;
+  bottom: 1em;
+  left: 1em;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+body #wrap section > #product > .ad {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background-image: url(./../images/al_banner.png);
+}
+
+body #wrap section > #product > .ad > span {
+  position: absolute;
+  left: 50%;
+  bottom: 150px;
+  font-size: 30px;
+  font-weight: 600;
+  text-align: center;
+}
+
+body #wrap section > #product > .ad > .more {
+  position: absolute;
+  left: 50%;
+  bottom: 110px;
+  color: #000;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+body #wrap section > #product > .help {
+  position: relative;
+  width: 100%;
+  height: 300px;
+}
+
+body #wrap section > #product > .help > h2 {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  font-size: 35px;
+}
+
+body #wrap section > #product > .help > ul {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  margin-top: -50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 600px;
+  height: 100px;
+}
+
+body #wrap section > #product > .help > ul > li {
+  position: relative;
+  width: 120px;
+}
+
+body #wrap section > #product > .help > ul > li:nth-child(2) > a {
+  background-image: url(./../images/help2.png);
+}
+
+body #wrap section > #product > .help > ul > li:nth-child(3) > a {
+  background-image: url(./../images/help3.png);
+}
+
+body #wrap section > #product > .help > ul > li:nth-child(4) > a {
+  background-image: url(./../images/help4.png);
+}
+
+body #wrap section > #product > .help > ul > li > a {
+  display: block;
+  width: 100%;
+  height: 70px;
+  background-image: url(./../images/help1.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+body #wrap section > #product > .help > ul > li > a > span {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 body #wrap > footer {
@@ -553,17 +747,17 @@ body #wrap > footer > .sec > .mnu > li > a {
   display: block;
 }
 
-body #wrap > footer > .sec .rule {
+body #wrap > footer > .sec > .rule {
   height: 70px;
   line-height: 1.6;
 }
 
-body #wrap > footer > .sec .rule > li {
+body #wrap > footer > .sec > .rule > li {
   position: relative;
   font-size: 12px;
 }
 
-body #wrap > footer > .sec .rule > li > a {
+body #wrap > footer > .sec > .rule > li > a {
   position: absolute;
   top: 0;
   right: calc(50% - 30px);
@@ -574,11 +768,11 @@ body #wrap > footer > .sec .rule > li > a {
   display: inline-block;
 }
 
-body #wrap > footer > .sec .address {
+body #wrap > footer > .sec > .address {
   line-height: 1.4;
 }
 
-body #wrap > footer .sns {
+body #wrap > footer > .sns {
   position: absolute;
   right: 300px;
   top: 100px;
@@ -591,12 +785,12 @@ body #wrap > footer .sns {
           justify-content: space-between;
 }
 
-body #wrap > footer .sns > h3 {
+body #wrap > footer > .sns > h3 {
   margin-right: 50px;
   font-size: 25px;
 }
 
-body #wrap > footer .sns > div {
+body #wrap > footer > .sns > div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -606,28 +800,29 @@ body #wrap > footer .sns > div {
   width: 200px;
 }
 
-body #wrap > footer .sns > div > a {
+body #wrap > footer > .sns > div > a {
   display: block;
 }
 
-body #wrap > footer .sns > div > a > img {
+body #wrap > footer > .sns > div > a > img {
   display: block;
 }
 
-body #wrap > footer .site {
+body #wrap > footer > .site {
   position: absolute;
   right: 190px;
   top: 160px;
   width: 500px;
+  z-index: 200;
 }
 
-body #wrap > footer .site > ul {
+body #wrap > footer > .site > ul {
   height: 40px;
   width: 240px;
   background-color: #222222;
 }
 
-body #wrap > footer .site > ul:after {
+body #wrap > footer > .site > ul:after {
   position: absolute;
   top: 10px;
   left: 210px;
@@ -640,19 +835,19 @@ body #wrap > footer .site > ul:after {
   border-color: transparent transparent #888888 transparent;
 }
 
-body #wrap > footer .site > ul > li {
+body #wrap > footer > .site > ul > li {
   position: relative;
   width: 100%;
 }
 
-body #wrap > footer .site > ul > li > a {
+body #wrap > footer > .site > ul > li > a {
   display: block;
   color: #888888;
   text-indent: 10px;
   line-height: 40px;
 }
 
-body #wrap > footer .site > ul > li > ol {
+body #wrap > footer > .site > ul > li > ol {
   width: 100%;
   position: absolute;
   top: -340px;
@@ -660,15 +855,47 @@ body #wrap > footer .site > ul > li > ol {
   height: 200px;
   line-height: 1.8;
   background-color: #000;
+  z-index: 1000;
 }
 
-body #wrap > footer .site > ul > li > ol > li {
+body #wrap > footer > .site > ul > li > ol > li {
   text-indent: 10px;
   color: #fff;
   font-size: 15px;
 }
 
-body #wrap > footer .site > ul > li > ol > li > a {
+body #wrap > footer > .site > ul > li > ol > li:hover > a {
+  color: #5865f5;
+}
+
+body #wrap > footer > .site > ul > li > ol > li > a {
   font-size: 13px;
+  font-weight: 600;
+}
+
+body #wrap > footer > .site > a.global {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+  height: 40px;
+  width: 240px;
+  color: #888888;
+  line-height: 40px;
+  text-indent: 10px;
+  background-color: #222222;
+}
+
+body #wrap > footer > .site > a.global:after {
+  position: absolute;
+  top: 12px;
+  left: 215px;
+  display: block;
+  content: '';
+  width: 0;
+  height: 0;
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent transparent transparent #888888;
 }
 /*# sourceMappingURL=style.css.map */

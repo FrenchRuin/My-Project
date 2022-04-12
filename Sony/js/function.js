@@ -32,9 +32,10 @@ $(function () {
 
   const $btnNext = $('.next')
   const $btnPrev = $('.prev')
-
+  const $indicator = $('.indicator>a')
 
   let nowIdx = 5;
+
 
 
   $btnNext.on('click', function (evt) {
@@ -54,7 +55,7 @@ $(function () {
       $('.slides>.slides-container>p').first().appendTo($container);
       $container.css({ left: '-500%' })
     })
-
+    $indicator.children('p').text('No.0' + (nowIdx - 4))
 
   })
   $btnPrev.on('click', function (evt) {
@@ -76,6 +77,12 @@ $(function () {
     }
 
     )
+    $indicator.children('p').text('No.0' + (nowIdx - 4))
+  })
+  $('.indicator>a').on('click', function (evt) {
+    evt.preventDefault();
+    $btnNext.trigger('click')
+    $(this).children('p').text('No.0' + (nowIdx - 4))
 
   })
 
@@ -121,6 +128,41 @@ $(function () {
       opacity: 1
     })
   })
+
+
+
+
+
+  $('.ad>span').css({
+    marginLeft: -$('.ad>span').width() / 2
+  })
+  $('.ad>.more').css({
+    marginLeft: -$('.ad>.more').width() / 2
+  })
+
+  $('.help>h2').css({
+    marginTop: -$('.help>h2').height() / 2
+  })
+
+  //푸터 sony Family
+
+  const $site = $('footer .site > ul > li ')
+  const $subSite = $('footer .site > ul > li > ol')
+
+  $site.on(' click', function (evt) {
+    evt.preventDefault();
+
+    $subSite.show();
+  })
+
+  $subSite.on('mouseleave', function () {
+    $subSite.hide();
+  })
+  // $site.on('mouseout', function (evt) {
+  //   evt.preventDefault();
+
+  //   $subSite.hide();
+  // })
 
 
 })
