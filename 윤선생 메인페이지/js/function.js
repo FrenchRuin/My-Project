@@ -55,4 +55,26 @@ $(function () {
       $container.css({ left: '-400%' })
     })
   })
+
+  const $top = $('aside>a')
+
+  $top.on('click', function (evt) {
+    evt.preventDefault();
+
+
+    $('html,body').stop().animate({
+      scrollTop: 0
+    })
+  })
+
+  $(window).on('scroll', function () {
+    const scrollTop = $(this).scrollTop();
+    const view = (scrollTop + $(this).height()) - $('footer').offset().top
+    if (view > 0) {
+      $('aside').css({ marginBottom: view });
+
+    } else {
+      $('aside').css({ marginBottom: 0 });
+    }
+  })
 })

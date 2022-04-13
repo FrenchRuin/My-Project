@@ -1,5 +1,8 @@
 @charset "utf-8";
 
+#wrap {
+	font-family: 'Noto Sans Korean', sans-serif;
+}
 header {
 	position: relative;
 	flex-flow: row nowrap;
@@ -300,6 +303,211 @@ section > article {
 	background-image: url(./../images/sc0403.png);
 }
 
+#check {
+	position: relative;
+	height: 2300px;
+	padding-top: 20px;
+	text-align: center;
+	background-color: #f6f6f6;
+}
+
+#check > .back_img_left {
+	position: absolute;
+	left: 0;
+	bottom: 4em;
+}
+#check > .back_img_right {
+	position: absolute;
+	right: 0;
+	bottom: 4em;
+}
+#check > .frame {
+	margin-bottom: 30px;
+}
+#check > .frame > img {
+	display: block;
+	margin: 0 auto;
+}
+#check > h2 {
+	color: #000;
+	font-size: 24px;
+	font-weight: 800;
+	margin-bottom: 18px;
+}
+#check > span {
+	line-height: 1.2;
+	color: #7d7d7d;
+	font-size: 23px;
+	font-weight: 600;
+	/* margin-bottom: 50px; */
+}
+
+#check > div {
+	/* 공통설정*/
+	position: relative;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	width: 1000px;
+	height: 550px;
+	margin: 80px auto 0;
+
+	background-color: #fff;
+	border: 1px solid transparent;
+	border-radius: 15px;
+}
+#check  .box {
+	/* 공통설정*/
+	position: absolute;
+	top: -25px;
+	width: 100px;
+	height: 50px;
+
+	color: #fff;
+	font-size: 20px;
+	text-align: center;
+	line-height: 50px;
+	background-color: #ee1c25;
+}
+#check > .check-1 > h2 {
+	margin: 70px 0 20px;
+	color: #000;
+	font-size: 35px;
+	font-weight: 800;
+	width: 100%;
+	/* height: 30px; */
+}
+#check > .check-1 > h2 > span {
+	position: relative;
+}
+#check > .check-1 > h2 > span:after {
+	position: absolute;
+	left: 3px;
+	bottom: 2px;
+	z-index: -1;
+	display: block;
+	content: '';
+	width: 320px;
+	height: 14px;
+
+	background-color: #fce62c;
+}
+#check > .check-1 > div {
+	position: relative;
+	border: 1px solid #cda722;
+	border-radius: 15px;
+	width: 450px;
+	height: 300px;
+}
+#check > .check-1 > div > img {
+	position: absolute;
+	left: calc(50% - 125px);
+	top: -80px;
+}
+#check > .check-1 > div:nth-of-type(2) > img {
+	left: calc(50% - 95px);
+}
+#check > .check-1 .check-content {
+	margin-top: 110px;
+}
+#check > .check-1 .check-content > p {
+	color: #000;
+	font-size: 28px;
+	font-weight: 600;
+	line-height: 1.6;
+}
+#check > .check-1 .check-content > p > span {
+	color: #caa169;
+	font-size: 42px;
+	font-weight: 400;
+}
+#check > .check-1 .check-content > p:last-child {
+	font-size: 20px;
+	color: #7d7d7d;
+	font-weight: 400;
+	line-height: 1.2;
+}
+
+#check > .check-2 > h2 {
+	margin: 70px 0 20px;
+	color: #000;
+	font-size: 35px;
+	font-weight: 800;
+	width: 100%;
+}
+#check > .check-2 > div {
+	position: relative;
+	width: 100%;
+	height: 50px;
+	margin-left: 20px;
+	/* line-height: 50px; */
+	text-align: left;
+}
+#check > .check-2 > div > .line {
+	position: absolute;
+	top: -30px;
+	width: 80%;
+	height: 80px;
+	background-color: #ff5959;
+	border: 1px solid transparent;
+	border-radius: 0 15px 15px 0;
+}
+#check > .check-2 > div.line-2 > .line {
+	background-color: #43be3a;
+	width: 75%;
+}
+#check > .check-2 > div.line-3 > .line {
+	background-color: #6f9eff;
+	width: 60%;
+}
+#check > .check-2 > div > p {
+	position: relative;
+	z-index: 1;
+	display: inline-block;
+	color: #fff;
+	text-indent: 10px;
+	font-size: 35px;
+	font-weight: 800;
+	margin-right: 20px;
+}
+
+#check > .check-2 > div > p.sub {
+	font-size: 30px;
+}
+
+#check > .check-3 > .frame {
+	margin: 40px 0 10px;
+}
+
+#news {
+	height: 700px;
+	text-align: center;
+	line-height: 1.4;
+}
+#news > .frame {
+	margin: 50px 0 30px;
+}
+#news > .frame > img {
+	display: block;
+	margin: 0 auto;
+}
+#news > h2 {
+	font-size: 30px;
+}
+#news > .news_link {
+	display: flex;
+	justify-content: space-between;
+	margin: 50px auto 0;
+	width: 900px;
+}
+#news > .news_link > li {
+}
+#news > .news_link > li > a {
+	display: block;
+}
+#news > .news_link > li > a > img {
+	display: block;
+}
 /* 푸터 */
 
 footer {
@@ -384,4 +592,21 @@ footer > .other > select {
 }
 footer > .other > select > option {
 	font-weight: 600;
+}
+
+aside {
+	position: fixed;
+	right: 5em;
+	bottom: 5em;
+	width: 50px;
+	/* height: 50px; */
+	background-color: #fce62c;
+}
+aside > a {
+	display: block;
+	height: 50px;
+	color: #000;
+	font-weight: 600;
+	text-align: center;
+	line-height: 50px;
 }
