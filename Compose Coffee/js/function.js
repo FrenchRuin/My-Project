@@ -45,7 +45,7 @@ $(function () {
   });
 
   $({ val: 0 }).animate({ val: storeNum }, {
-    duration: 2400,
+    duration: 2800,
     step: function () {
       var num = numberWithCommas(Math.floor(this.val));
       $(".status>div:nth-child(2) span").text(num);
@@ -57,7 +57,7 @@ $(function () {
   });
 
   $({ val: 0 }).animate({ val: appNum }, {
-    duration: 2800,
+    duration: 3400,
     step: function () {
       var num = numberWithCommas(Math.floor(this.val));
       $(".status>div:nth-child(3) span").text(num);
@@ -77,7 +77,22 @@ $(function () {
   $(window).on('scroll', function () {
     let scrolled = $(window).scrollTop() >= $headerChangeTopVal
     $('header').toggleClass('down', scrolled)
+    console.log($(this).scrollTop())
+
+    //이미지 슬라이드업
+    if ($(this).scrollTop() > 1400) {
+      $('#store .frame').addClass('on')
+    }
+    if ($(this).scrollTop() > 1900) {
+      $('#open .contents').addClass('on')
+    }
+    if ($(this).scrollTop() > 3400) {
+      $('#news .contents').addClass('on')
+    }
+
   })
+
+
 
   //슬라이드 
   const $slides = $('#slides>.slides>.slides-container')
@@ -123,5 +138,9 @@ $(function () {
     })
 
   })
+
+
+
+
 
 })

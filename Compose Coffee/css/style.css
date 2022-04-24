@@ -25,6 +25,10 @@
   background-color: #fff;
 }
 
+#wrap > header.down > nav {
+  position: relative;
+}
+
 #wrap > header.down > nav > .gnb a {
   color: #000;
 }
@@ -33,12 +37,50 @@
   color: #000;
 }
 
+#wrap > header.down > .menu {
+  position: relative;
+}
+
 #wrap > header.down > .menu p {
   color: #000;
 }
 
-#wrap > header.down > .menu i {
-  color: #000;
+#wrap > header.down > .menu .menu_btn {
+  display: block;
+  position: relative;
+  top: 50%;
+  left: -20px;
+  z-index: 1100;
+  width: 30px;
+  height: 30px;
+  margin-top: -8px;
+}
+
+#wrap > header.down > .menu .menu_btn:hover > span {
+  -webkit-transform: rotate(50deg);
+          transform: rotate(50deg);
+}
+
+#wrap > header.down > .menu .menu_btn:hover > span:nth-child(2) {
+  -webkit-transform: rotate(-50deg);
+          transform: rotate(-50deg);
+}
+
+#wrap > header.down > .menu .menu_btn > span {
+  display: block;
+  border: 1px solid #000;
+  margin-bottom: 5px;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+#wrap > header.down > .menu .menu_btn > span:nth-child(1) {
+  width: 50%;
+}
+
+#wrap > header.down > .menu .menu_btn > span:nth-child(3) {
+  width: 50%;
+  margin-left: 12px;
 }
 
 #wrap > header > .logo {
@@ -166,14 +208,41 @@
   font-weight: 400;
 }
 
-#wrap > header > .menu > a {
+#wrap > header > .menu .menu_btn {
   display: block;
+  position: relative;
+  top: 50%;
+  left: -20px;
+  z-index: 999;
   width: 30px;
+  height: 17px;
+  margin-top: -7px;
 }
 
-#wrap > header > .menu > a > i {
-  font-size: 20px;
-  color: #fff;
+#wrap > header > .menu .menu_btn:hover > span {
+  -webkit-transform: rotate(50deg);
+          transform: rotate(50deg);
+}
+
+#wrap > header > .menu .menu_btn:hover > span:nth-child(2) {
+  -webkit-transform: rotate(-50deg);
+          transform: rotate(-50deg);
+}
+
+#wrap > header > .menu .menu_btn > span {
+  display: block;
+  border: 1px solid #fff;
+  margin-bottom: 7px;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+#wrap > header > .menu .menu_btn > span:nth-child(1) {
+  width: 50%;
+}
+
+#wrap > header > .menu .menu_btn > span:nth-child(3) {
+  width: 50%;
 }
 
 #wrap > .all-menu {
@@ -259,7 +328,8 @@
   height: 1080px;
   background-image: url(./../images/main.png);
   background-position: center center;
-  background-size: 105%;
+  background-repeat: no-repeat;
+  background-size: cover;
   -webkit-animation: shrink 2s;
           animation: shrink 2s;
 }
@@ -269,7 +339,7 @@
     background-size: 120%;
   }
   100% {
-    background-size: 105%;
+    background-size: 101%;
   }
 }
 
@@ -278,7 +348,7 @@
     background-size: 120%;
   }
   100% {
-    background-size: 105%;
+    background-size: 101%;
   }
 }
 
@@ -552,16 +622,46 @@
           justify-content: space-between;
 }
 
+@-webkit-keyframes imgUp {
+  0% {
+    opacity: 0;
+    bottom: -50px;
+  }
+  100% {
+    opacity: 1;
+    bottom: 0;
+  }
+}
+
+@keyframes imgUp {
+  0% {
+    opacity: 0;
+    bottom: -50px;
+  }
+  100% {
+    opacity: 1;
+    bottom: 0;
+  }
+}
+
 #wrap > section #store > div > .store > .frame {
+  opacity: 0;
+  position: relative;
+  bottom: -50px;
   width: 300px;
   height: 250px;
 }
 
-#wrap > section #store > div > .store > .frame > img {
+#wrap > section #store > div > .store > .frame.on {
+  -webkit-animation: imgUp 1.4s forwards;
+          animation: imgUp 1.4s forwards;
+}
+
+#wrap > section #store > div > .store > .frame.on > img {
   display: block;
 }
 
-#wrap > section #store > div > .store > .frame > span {
+#wrap > section #store > div > .store > .frame.on > span {
   display: block;
   position: absolute;
   bottom: 0;
@@ -569,6 +669,21 @@
   font-size: 18px;
   font-weight: 400;
   background-color: rgba(0, 0, 0, 0.444);
+}
+
+#wrap > section #store > div > .store > .frame:nth-child(2).on {
+  -webkit-animation-delay: .5s;
+          animation-delay: .5s;
+}
+
+#wrap > section #store > div > .store > .frame:nth-child(3).on {
+  -webkit-animation-delay: .8s;
+          animation-delay: .8s;
+}
+
+#wrap > section #store > div > .store > .frame:nth-child(4).on {
+  -webkit-animation-delay: 1.1s;
+          animation-delay: 1.1s;
 }
 
 #wrap > section > #open {
@@ -586,13 +701,10 @@
 
 #wrap > section > #open > .container > .background {
   position: absolute;
-  top: -10px;
   height: 800px;
   width: 100%;
   background-image: url(./../images/sec01.jpg);
   background-position: center center;
-  -webkit-transform: translateY();
-          transform: translateY();
 }
 
 #wrap > section > #open > .container .shadow {
@@ -605,30 +717,36 @@
 
 #wrap > section > #open > .container .contents {
   position: relative;
+  opacity: 0;
   z-index: 1;
   margin-top: 150px;
   text-align: center;
 }
 
-#wrap > section > #open > .container .contents > h3 {
+#wrap > section > #open > .container .contents.on {
+  -webkit-animation: imgUp 1.5s forwards;
+          animation: imgUp 1.5s forwards;
+}
+
+#wrap > section > #open > .container .contents.on > h3 {
   color: #fff;
   font-weight: 400;
   font-size: 40px;
 }
 
-#wrap > section > #open > .container .contents > .line {
+#wrap > section > #open > .container .contents.on > .line {
   width: 100px;
   height: 2px;
   margin: 20px auto;
   background-color: #fff;
 }
 
-#wrap > section > #open > .container .contents > p {
+#wrap > section > #open > .container .contents.on > p {
   color: #eee;
   font-size: 20px;
 }
 
-#wrap > section > #open > .container .contents > a {
+#wrap > section > #open > .container .contents.on > a {
   display: block;
   width: 150px;
   height: 50px;
@@ -725,30 +843,36 @@
 
 #wrap > section > #news > .container .contents {
   position: relative;
+  opacity: 0;
   z-index: 1;
   margin-top: 120px;
   text-align: center;
 }
 
-#wrap > section > #news > .container .contents > h3 {
+#wrap > section > #news > .container .contents.on {
+  -webkit-animation: imgUp .8s forwards;
+          animation: imgUp .8s forwards;
+}
+
+#wrap > section > #news > .container .contents.on > h3 {
   color: #fff;
   font-weight: 400;
   font-size: 40px;
 }
 
-#wrap > section > #news > .container .contents > .line {
+#wrap > section > #news > .container .contents.on > .line {
   width: 100px;
   height: 2px;
   margin: 20px auto;
   background-color: #fff;
 }
 
-#wrap > section > #news > .container .contents > p {
+#wrap > section > #news > .container .contents.on > p {
   color: #eee;
   font-size: 20px;
 }
 
-#wrap > section > #news > .container .contents > a {
+#wrap > section > #news > .container .contents.on > a {
   display: block;
   width: 100px;
   height: 30px;
@@ -760,7 +884,7 @@
   border: 1px solid #eee;
 }
 
-#wrap > section > #news > .container .contents > ul {
+#wrap > section > #news > .container .contents.on > ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -771,7 +895,7 @@
   width: 1200px;
 }
 
-#wrap > section > #news > .container .contents > ul > li {
+#wrap > section > #news > .container .contents.on > ul > li {
   position: relative;
   background-color: rgba(255, 255, 255, 0.426);
   height: 200px;
@@ -779,11 +903,11 @@
   padding: 10px;
 }
 
-#wrap > section > #news > .container .contents > ul > li:hover > a {
+#wrap > section > #news > .container .contents.on > ul > li:hover > a {
   color: #ffd900;
 }
 
-#wrap > section > #news > .container .contents > ul > li > a {
+#wrap > section > #news > .container .contents.on > ul > li > a {
   display: block;
   height: 200px;
   font-size: 16px;
@@ -792,7 +916,7 @@
   transition: all .3s;
 }
 
-#wrap > section > #news > .container .contents > ul > li > span {
+#wrap > section > #news > .container .contents.on > ul > li > span {
   position: absolute;
   bottom: 90px;
   display: block;
@@ -800,7 +924,7 @@
   text-align: left;
 }
 
-#wrap > section > #news > .container .contents > ul > li > span:last-child {
+#wrap > section > #news > .container .contents.on > ul > li > span:last-child {
   bottom: 8px;
 }
 
