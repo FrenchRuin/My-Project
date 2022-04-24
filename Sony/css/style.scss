@@ -173,25 +173,125 @@ body {
 					margin: 0 auto;
 					> .slides-container {
 						position: absolute;
-						left: -500%;
+						left: 0;
 						display: flex;
 						flex-flow: row nowrap;
-						width: calc(15 * 100%);
+						width: calc(5 * 100%);
 						height: 100%;
 
-						> p {
+						> div {
 							position: relative;
 							display: block;
 							height: 100%;
-							width: calc(100% / 15);
+							width: calc(100% / 5);
+
 							background-position: center center;
 
 							> video {
 								position: absolute;
 								z-index: 0;
+								width: 100%;
+								height: 100%;
 								object-fit: fill;
+							} //end of video
+							> .more {
+								display: none;
+								position: absolute;
+								left: 180px;
+								bottom: 200px;
+								z-index: 1;
+
+								&.on {
+									display: block;
+									// border: 1px solid #000;
+									overflow: hidden;
+									> a {
+										display: block;
+										color: #fff;
+										font-weight: 600;
+										font-size: 18px;
+										transform: translateY(-20em);
+										animation: wordsShow 1s forwards;
+										animation-delay: 2s;
+										> i {
+											margin-left: 10px;
+										}
+									}
+								}
 							}
-						} //end of .slides-container > p
+							> .words {
+								display: none;
+
+								position: absolute;
+								top: 150px;
+								left: 180px;
+								line-height: 1;
+
+								&.on {
+									display: block;
+									@keyframes wordsShow {
+										0% {
+											transform: translateX(-20em);
+										}
+										100% {
+											transform: translateX(0);
+										}
+									}
+									> .words-top {
+										display: flex;
+
+										position: relative;
+
+										> div {
+											overflow: hidden;
+
+											.words-top-0 {
+												animation-delay: .3s;
+											}
+											.words-top-1 {
+												animation-delay: .9s;
+											}
+											.words-top-2 {
+												animation-delay: 1.2s;
+											}
+											.words-top-3 {
+												animation-delay: 1.5s;
+												animation-duration: .8s;
+											}
+
+											> span {
+												display: block;
+
+												margin-right: 20px;
+												// height: ;
+												font-size: 120px;
+												font-weight: 600;
+												color: #fff;
+												transform: translateX(-20em);
+												animation: wordsShow 1s forwards;
+												// border: 1px solid #000;
+											}
+										} //end of .words-top >div
+									} //end .words-top
+									> .words-hashtag {
+										display: block;
+
+										padding: 50px 0;
+										overflow: hidden;
+										> span {
+											display: block;
+											color: #fff;
+											font-size: 20px;
+											font-weight: 300;
+
+											transform: translateX(-20em);
+											animation: wordsShow 1s forwards;
+											animation-delay: 2s;
+										}
+									} //end of .words-hashtag
+								}
+							} //end of .words
+						} //end of .slides-container > div
 
 						> .slide-4 {
 							background-image: url(./../images/PC_LXPS-S3.jpg);
@@ -259,10 +359,10 @@ body {
 					overflow: hidden;
 					> .main-slides-container {
 						position: relative;
-						left: -(950px * 4);
+						left: 0;
 						display: flex;
 						flex-flow: row nowrap;
-						width: calc(950px * 12);
+						width: calc(950px * 4);
 						> p {
 							display: block;
 							width: 950px;
@@ -293,22 +393,30 @@ body {
 					overflow: hidden;
 					> .sub-slides-container {
 						position: relative;
-						left: -(610px * 4);
+						left: 0;
 						display: flex;
 						flex-flow: row nowrap;
 						justify-content: space-between;
 						margin-left: 50px;
 						padding-top: 60px;
-						width: 7210px;
+						width: 2400px;
 						> div {
 							// border: 1px solid #000;
 							line-height: 1.6;
 							width: 500px;
+
+							&.on {
+								> span {
+									opacity: 1;
+								}
+							}
+
 							> span {
 								display: block;
 								font-size: 45px;
 								font-weight: 800;
-								// opacity: 0;
+								opacity: 0;
+								transition: all .3s;
 								&:nth-of-type(2) {
 									font-size: 30px;
 									font-weight: 700;
@@ -319,6 +427,7 @@ body {
 									font-weight: 600;
 								}
 							} //end of span
+
 							> .frame {
 								display: block;
 								overflow: hidden;
@@ -330,7 +439,7 @@ body {
 									background-color: #fff;
 									display: block;
 									width: 500px;
-
+									transition: all .3s ease-in-out;
 									&:hover {
 										object-fit: cover;
 										transform: scale(1.1);
@@ -429,10 +538,20 @@ body {
 								display: block;
 								background-image: url(./../images/Main-Event-Banner-S\_1.jpg);
 								background-position: center center;
-								background-size: cover;
+								background-size: 100%;
+								transition: all .3s;
+								@keyframes zoomin {
+									0% {
+										background-size: 100%;
+									}
+									100% {
+										background-size: 110%;
+									}
+								}
 
 								&:hover {
-									background-size: 110%;
+									// background-size: 110%;
+									animation: zoomin .3s forwards;
 								}
 								> span {
 									position: absolute;
@@ -477,22 +596,6 @@ body {
 						position: relative;
 						width: calc(100% / 4);
 						border-right: 1px solid #eee;
-						transition: all .5s;
-
-						@keyframes slide {
-							0% {
-								background-position: 200px center;
-							}
-							100% {
-								background-position: center center;
-							}
-						}
-						&:hover {
-							background-color: #5865f5;
-							> a {
-								animation: slide .3s forwards;
-							}
-						}
 
 						&:nth-child(2) > a {
 							background-image: url(./../images/main_prod_2.png);
@@ -504,6 +607,10 @@ body {
 							background-image: url(./../images/main_prod_4.png);
 						}
 
+						&:hover > a {
+							background-color: #5865f5;
+							background-position: center center;
+						}
 						> a {
 							display: block;
 							background-image: url(./../images/main_prod_1.png);
@@ -512,6 +619,7 @@ body {
 							text-indent: -9999px;
 							background-position: 200px center;
 							background-repeat: no-repeat;
+							transition: all .3s;
 						}
 						> span {
 							position: absolute;
@@ -662,7 +770,7 @@ body {
 				position: absolute;
 				right: 300px;
 				top: 100px;
-				z-index: 0;
+				// z-index: -1;
 				display: flex;
 				justify-content: space-between;
 				> h3 {
@@ -722,10 +830,10 @@ body {
 							position: absolute;
 							top: -340px;
 							display: none;
-							height: 200px;
+							height: 340px;
 							line-height: 1.8;
 							background-color: #000;
-							z-index: 1000;
+							// z-index: 1000;
 							> li {
 								text-indent: 10px;
 								color: #fff;

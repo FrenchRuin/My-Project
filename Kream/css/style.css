@@ -1,3 +1,7 @@
+#wrap {
+  position: relative;
+}
+
 #wrap > header {
   position: fixed;
   top: 0;
@@ -39,11 +43,11 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 200px;
+  width: 250px;
 }
 
 #wrap > header > nav > .info > li > a {
-  font-size: 10px;
+  font-size: 12px;
   display: block;
 }
 
@@ -57,7 +61,7 @@
   position: absolute;
   bottom: 0;
   right: 20px;
-  width: 250px;
+  width: 300px;
   height: 50px;
 }
 
@@ -67,6 +71,7 @@
 }
 
 #wrap > header > nav > .gnb > li > a {
+  font-size: 16px;
   display: block;
 }
 
@@ -83,6 +88,7 @@
   width: 100%;
   height: 480px;
   margin-top: 80px;
+  padding: 0;
 }
 
 #wrap > section > #slides .slides-container {
@@ -297,6 +303,7 @@
   margin-bottom: 10px;
   padding-bottom: 10px;
   color: #000;
+  font-size: 16px;
   font-weight: 500;
   border-bottom: 1px solid #eee;
 }
@@ -307,7 +314,7 @@
 
 #wrap > section > article > .items > div > .item-explain > strong {
   display: block;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 #wrap > section > article > .more {
@@ -818,6 +825,22 @@
   background-position: center center;
 }
 
+#wrap > section > #just .item-1 > a {
+  background-image: url(./../images/just_1.png);
+}
+
+#wrap > section > #just .item-2 > a {
+  background-image: url(./../images/just_2.png);
+}
+
+#wrap > section > #just .item-3 > a {
+  background-image: url(./../images/just_3.png);
+}
+
+#wrap > section > #just .item-4 > a {
+  background-image: url(./../images/just_4.png);
+}
+
 #wrap > footer {
   width: 100%;
   padding: 50px 0;
@@ -979,5 +1002,20 @@
 
 #wrap > footer > .foot > .customer > .sns > a > i {
   font-size: 25px;
+}
+
+#wrap > aside {
+  display: none;
+  position: fixed;
+  bottom: 2em;
+  right: 2em;
+}
+
+#wrap > aside > a {
+  display: block;
+}
+
+#wrap > aside > a > i {
+  font-size: 40px;
 }
 /*# sourceMappingURL=style.css.map */

@@ -6,6 +6,8 @@ $(function () {
   const $nextBtn = $('.right')
   const $prevBtn = $('.left')
 
+  const $aside = $('aside')
+
   let nowIdx = 0;
 
   let intavalKey = null;
@@ -14,6 +16,7 @@ $(function () {
     $slides.eq(nowIdx).fadeIn().siblings().fadeOut()
     $slides_indicator.eq(nowIdx).addClass('on').siblings().removeClass('on')
   }
+
   $nextBtn.on('click', function (evt) {
     evt.preventDefault();
 
@@ -50,6 +53,31 @@ $(function () {
     intavalKey = setInterval(function () {
       $nextBtn.trigger('click')
     }, 3000)
+  })
+
+  // TOP 버튼
+  $aside.on('click', function (evt) {
+    evt.preventDefault();
+
+    $('html,body').stop().animate({
+      scrollTop: 0
+    })
+  })
+
+  $(window).on('scroll', function () {
+    let scrollTop = $(this).scrollTop();
+    if (scrollTop > 120) {
+      $aside.stop().fadeIn(120);
+    } else {
+      $aside.stop().fadeOut(120);
+    }
+    const view = scrollTop + $(this).height() - $('footer').offset().top;
+    if (view > 0) {
+      $aside.css({ marginBottom: view })
+
+    } else {
+      $aside.css({ marginBottom: 0 })
+    }
   })
 
 
