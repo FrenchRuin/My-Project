@@ -1,19 +1,17 @@
 $(function () {
 
-  const $under = $('.lnb .under')
+
   const $lnb = $('.lnb')
   const $gnbmnu = $('.gnb > li')
 
   const $notice = $('.notice ul li')
 
-  let underHeight = ['124px', '72px', '72px', '20px', '72px', '124px']
+
   let intervalkey = null;
 
-  for (let i = 0; i < $under.length; i++) {
+  for (let i = 0; i < $gnbmnu.length; i++) {
 
-    $under.eq(i).css({
-      bottom: '-' + underHeight[i]
-    })
+
 
     $gnbmnu.eq(i).on('mouseenter', function () {
 
