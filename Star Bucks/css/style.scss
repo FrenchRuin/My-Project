@@ -595,18 +595,44 @@
 				background-image: url(./../images/summer_bg_r1.png);
 			}
 			> .product {
-				right: 50%;
+				right: 75%;
 				top: 50%;
 				margin-top: -209px;
 				width: 310px;
 				height: 418px;
 				background-image: url(./../images/2022_Summer1_bean_bean.png);
+
+				animation: pro_move 1.2s forwards;
+				animation-play-state: paused;
+
+				@keyframes pro_move {
+					0% {
+						opacity: 0;
+						right: 75%;
+					}
+					100% {
+						opacity: 1;
+						right: 50%;
+					}
+				}
 			}
 			> .more {
 				position: absolute;
-				left: 50%;
+				right: 0;
 				bottom: 50%;
+				animation: txt_move 1.2s forwards;
+				animation-play-state: paused;
 
+				@keyframes txt_move {
+					0% {
+						opacity: 0;
+						right: 0;
+					}
+					100% {
+						opacity: 1;
+						right: 30%;
+					}
+				}
 				// width: ;
 				> .detail {
 					width: 321px;
@@ -706,10 +732,14 @@
 					// position: absolute;
 					text-indent: -9999px;
 					margin-bottom: 50px;
+
+					animation: pick_move 2s forwards;
+					animation-play-state: paused;
 					&.txt_1 {
 						left: 0;
 						width: 362px;
 						height: 204px;
+						transform: translateX(-400px);
 						background-image: url(./../images/fav_prod_txt01.png);
 						background-repeat: no-repeat;
 						background-position: right;
@@ -717,7 +747,17 @@
 					&.txt_2 {
 						width: 362px;
 						height: 156px;
+						transform: translateX(-400px);
+						animation-delay: .3s;
 						background-image: url(./../images/fav_prod_txt02.png);
+					}
+					@keyframes pick_move {
+						0% {
+							transform: translateX(-400px);
+						}
+						100% {
+							transform: translateX(0);
+						}
 					}
 				}
 
@@ -787,6 +827,7 @@
 				}
 			} //end of div
 			> .pic {
+				display: none;
 				width: 348px;
 				height: 374px;
 				text-indent: -9999px;
@@ -803,6 +844,7 @@
 
 			background-image: url(./../images/store_bg.jpg);
 			> .pic {
+				display: none;
 				position: relative;
 				margin-right: 200px;
 				> p {
@@ -828,6 +870,9 @@
 				> p {
 					margin-bottom: 20px;
 					text-indent: -9999px;
+					transform: translateX(300px);
+					animation: store_txt 2.5s forwards;
+					animation-play-state: paused;
 					&.txt_1 {
 						width: 385px;
 						height: 54px;
@@ -837,6 +882,16 @@
 						width: 366px;
 						height: 61px;
 						background-image: url(./../images/store_txt02.png);
+						animation-delay: .3s;
+					}
+
+					@keyframes store_txt {
+						0% {
+							transform: translateX(300px);
+						}
+						100% {
+							transform: translateX(0);
+						}
 					}
 				}
 

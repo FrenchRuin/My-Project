@@ -1,0 +1,111 @@
+@charset "utf-8";
+
+#wrap {
+	> header {
+		position: relative;
+		width: 100%;
+		border-bottom: 1px solid #999;
+
+		&::after {
+			position: absolute;
+			top: 0;
+			z-index: -1;
+			width: 100%;
+			height: 30px;
+			content: '';
+			display: block;
+			background-color: #05141f;
+		}
+		.h_top {
+			display: flex;
+			justify-content: space-between;
+
+			width: 1440px;
+			height: 20px;
+			margin: 0 auto;
+			padding: 5px 0;
+			> .h_top_l {
+				display: flex;
+				> li {
+					border-right: 1px solid #9ba1a5;
+					&:last-child {
+						border: none;
+					}
+					> a {
+						display: block;
+						padding: 0 10px;
+						color: #9ba1a5;
+						font-size: 13px;
+						font-weight: 600;
+					}
+				}
+			} //end of .h_top_l
+			> .h_top_r {
+				display: flex;
+				> li {
+					border-left: 1px solid #9ba1a5;
+					&:first-child {
+						border: none;
+					}
+					> a {
+						display: block;
+						padding: 0 10px;
+						color: #9ba1a5;
+						font-size: 13px;
+						font-weight: 600;
+					}
+				}
+			} //end of .h_top_r
+		} //end of .h_top
+		> .h_bottom {
+			position: relative;
+			display: flex;
+			justify-content: space-between;
+			width: 1440px;
+			margin: 0 auto;
+			padding: 30px 0;
+
+			&::after {
+				position: absolute;
+				top: 50%;
+				right: 50%;
+				margin: -12px -50px 0 0;
+				width: 100px;
+				height: 24px;
+				content: '기아 - Movement that inspires | 기아 공식 사이트';
+				text-indent: -9999px;
+				background-image: url(./../images/logo.webp);
+				background-position: center center;
+				background-repeat: no-repeat;
+			}
+			> .h_bottom_l {
+				display: flex;
+				> li {
+					> a {
+						display: block;
+						font-size: 18px;
+						// color: #fff;
+						font-weight: 600;
+						padding: 0 10px;
+					}
+				}
+			} //end of .h_bottom_l
+			> .h_bottom_r {
+				display: flex;
+				> li {
+					> a {
+						padding-right: 10px;
+						display: block;
+						font-size: 18px;
+						font-weight: 600;
+						padding: 0 10px;
+					}
+				}
+			} //end of .h_bottom_r
+		} //end of .h_bottom
+	} //end of header
+	> section {
+	} //end of section
+	> footer {
+	} //end of footer
+} //end of #wrap

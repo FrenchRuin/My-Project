@@ -125,6 +125,48 @@ $(function () {
     $('#promotion_slides').slideToggle()
     $proDown.toggleClass('up')
   })
+
+
+  // 스크롤시 애니메이션
+
+  const $sul_product = $('#sulawesi > .product')
+  const $sul_txt = $('#sulawesi > .more')
+
+  const $pick_txt = $('#pick > .content > p')
+
+  const $mag_pic = $('#magazine > .pic')
+
+  const $store_pic = $('#store > .pic')
+  const $store_txt = $('#store > .text > p')
+
+  $(window).on('scroll', function () {
+    console.log($(this).scrollTop());
+
+    if ($(this).scrollTop() > 150) {
+      $sul_product.css({
+        animationPlayState: 'initial'
+      })
+      $sul_txt.css({
+        animationPlayState: 'initial'
+      })
+    }
+    if ($(this).scrollTop() > 1070) {
+      $pick_txt.css({
+        animationPlayState: 'initial'
+      })
+    }
+    if ($(this).scrollTop() > 2000) {
+      $mag_pic.fadeIn(2000)
+    }
+    if ($(this).scrollTop() > 2500) {
+      $store_pic.fadeIn(2000)
+      $store_txt.css({
+        animationPlayState: 'initial'
+      })
+    }
+  })
+
+
 })
 
 

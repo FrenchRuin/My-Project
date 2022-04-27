@@ -1,0 +1,129 @@
+@charset "UTF-8";
+#wrap > header {
+  position: relative;
+  width: 100%;
+  border-bottom: 1px solid #999;
+}
+
+#wrap > header::after {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+  height: 30px;
+  content: '';
+  display: block;
+  background-color: #05141f;
+}
+
+#wrap > header .h_top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 1440px;
+  height: 20px;
+  margin: 0 auto;
+  padding: 5px 0;
+}
+
+#wrap > header .h_top > .h_top_l {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#wrap > header .h_top > .h_top_l > li {
+  border-right: 1px solid #9ba1a5;
+}
+
+#wrap > header .h_top > .h_top_l > li:last-child {
+  border: none;
+}
+
+#wrap > header .h_top > .h_top_l > li > a {
+  display: block;
+  padding: 0 10px;
+  color: #9ba1a5;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+#wrap > header .h_top > .h_top_r {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#wrap > header .h_top > .h_top_r > li {
+  border-left: 1px solid #9ba1a5;
+}
+
+#wrap > header .h_top > .h_top_r > li:first-child {
+  border: none;
+}
+
+#wrap > header .h_top > .h_top_r > li > a {
+  display: block;
+  padding: 0 10px;
+  color: #9ba1a5;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+#wrap > header > .h_bottom {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 1440px;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+#wrap > header > .h_bottom::after {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  margin: -12px -50px 0 0;
+  width: 100px;
+  height: 24px;
+  content: '기아 - Movement that inspires | 기아 공식 사이트';
+  text-indent: -9999px;
+  background-image: url(./../images/logo.webp);
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+#wrap > header > .h_bottom > .h_bottom_l {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#wrap > header > .h_bottom > .h_bottom_l > li > a {
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 0 10px;
+}
+
+#wrap > header > .h_bottom > .h_bottom_r {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#wrap > header > .h_bottom > .h_bottom_r > li > a {
+  padding-right: 10px;
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 0 10px;
+}
+/*# sourceMappingURL=style.css.map */
