@@ -1,8 +1,36 @@
-@charset "UTF-8";
-#wrap > header {
+#wrap {
   position: relative;
+}
+
+#wrap > .bgshadow {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+  height: 400px;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(5, 20, 31, 0.6)), color-stop(50%, rgba(255, 255, 255, 0)));
+  background: linear-gradient(to bottom, rgba(5, 20, 31, 0.6) 0%, rgba(255, 255, 255, 0) 50%);
+}
+
+#wrap > header {
+  position: fixed;
   width: 100%;
   border-bottom: 1px solid #999;
+  z-index: 1000;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+#wrap > header.down, #wrap > header:hover {
+  background-color: #fff;
+}
+
+#wrap > header.down > .h_bottom > .logo > a, #wrap > header:hover > .h_bottom > .logo > a {
+  background-image: url(./../images/logo.webp);
+}
+
+#wrap > header.down > .h_bottom > ul > li > a, #wrap > header:hover > .h_bottom > ul > li > a {
+  color: #05141f;
 }
 
 #wrap > header::after {
@@ -51,6 +79,11 @@
   font-weight: 600;
 }
 
+#wrap > header .h_top > .h_top_l > li > a:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+
 #wrap > header .h_top > .h_top_r {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -73,6 +106,11 @@
   font-weight: 600;
 }
 
+#wrap > header .h_top > .h_top_r > li > a:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+
 #wrap > header > .h_bottom {
   position: relative;
   display: -webkit-box;
@@ -86,16 +124,19 @@
   padding: 30px 0;
 }
 
-#wrap > header > .h_bottom::after {
+#wrap > header > .h_bottom > .logo {
   position: absolute;
+  left: 50%;
   top: 50%;
-  right: 50%;
-  margin: -12px -50px 0 0;
+  margin: -12px 0 0 -50px;
   width: 100px;
+}
+
+#wrap > header > .h_bottom > .logo > a {
+  display: block;
   height: 24px;
-  content: '기아 - Movement that inspires | 기아 공식 사이트';
   text-indent: -9999px;
-  background-image: url(./../images/logo.webp);
+  background-image: url(./../images/logo_w.webp);
   background-position: center center;
   background-repeat: no-repeat;
 }
@@ -109,8 +150,13 @@
 #wrap > header > .h_bottom > .h_bottom_l > li > a {
   display: block;
   font-size: 18px;
+  color: #fff;
   font-weight: 600;
   padding: 0 10px;
+}
+
+#wrap > header > .h_bottom > .h_bottom_l > li > a:hover {
+  text-decoration: underline;
 }
 
 #wrap > header > .h_bottom > .h_bottom_r {
@@ -120,10 +166,391 @@
 }
 
 #wrap > header > .h_bottom > .h_bottom_r > li > a {
-  padding-right: 10px;
   display: block;
+  padding-right: 10px;
+  color: #fff;
   font-size: 18px;
   font-weight: 600;
   padding: 0 10px;
+}
+
+#wrap > header > .h_bottom > .h_bottom_r > li > a:hover {
+  text-decoration: underline;
+}
+
+#wrap > section {
+  width: 100%;
+}
+
+#wrap > section > #main {
+  position: relative;
+  width: 100%;
+  height: 1010px;
+}
+
+#wrap > section > #main > .slides > div {
+  overflow: hidden;
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 1010px;
+}
+
+#wrap > section > #main > .slides > div.on {
+  display: block;
+}
+
+#wrap > section > #main > .slides > div.slide-1 > .slide-con > .title {
+  color: #fff;
+}
+
+#wrap > section > #main > .slides > div.slide-2 > .slide-con > .title {
+  color: #fff;
+}
+
+#wrap > section > #main > .slides > div > .slide-con {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  margin-left: -600px;
+  top: 150px;
+  width: 1200px;
+}
+
+#wrap > section > #main > .slides > div > .slide-con > .title {
+  font-size: 38px;
+  text-align: center;
+  line-height: 1.4;
+  font-weight: 500;
+  color: #05141f;
+}
+
+#wrap > section > #main > .slides > div > .slide-con > .more {
+  display: block;
+  width: 220px;
+  height: 30px;
+  margin: 20px auto 0;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 30px;
+  background-color: #05141f;
+}
+
+#wrap > section > #main > .slides > div > .slide-con > .more:hover {
+  -webkit-animation: title_light .5s;
+          animation: title_light .5s;
+}
+
+@-webkit-keyframes title_light {
+  0% {
+    background-color: #05141f;
+    color: #fff;
+  }
+  50% {
+    background-color: #fff;
+    color: #05141f;
+  }
+  100% {
+    background-color: #05141f;
+    color: #fff;
+  }
+}
+
+@keyframes title_light {
+  0% {
+    background-color: #05141f;
+    color: #fff;
+  }
+  50% {
+    background-color: #fff;
+    color: #05141f;
+  }
+  100% {
+    background-color: #05141f;
+    color: #fff;
+  }
+}
+
+#wrap > section > #main > .slides > div > img {
+  display: block;
+}
+
+#wrap > section > #main > .indicator {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  bottom: 250px;
+  left: 50%;
+  margin-left: -100px;
+}
+
+#wrap > section > #main > .indicator > ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 200px;
+}
+
+#wrap > section > #main > .indicator > ul > li {
+  width: 14px;
+  background-color: #fff;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+#wrap > section > #main > .indicator > ul > li.on {
+  width: 60px;
+  background-color: #05141f;
+  border-radius: 10px;
+}
+
+#wrap > section > #main > .indicator > ul > li > a {
+  display: block;
+  height: 14px;
+  text-indent: -9999px;
+}
+
+#wrap > section > #main > .main-menu {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -500px;
+  -webkit-box-shadow: #05141f 1px 1px 5px;
+          box-shadow: #05141f 1px 1px 5px;
+}
+
+#wrap > section > #main > .main-menu > ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 200px;
+}
+
+#wrap > section > #main > .main-menu > ul > li {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background-color: #fff;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+#wrap > section > #main > .main-menu > ul > li:hover {
+  background-color: #05141f;
+}
+
+#wrap > section > #main > .main-menu > ul > li:nth-child(2) > a::before {
+  background-position: -50px 0;
+}
+
+#wrap > section > #main > .main-menu > ul > li:nth-child(2) > a::before:hover {
+  background-position: -50px 50px;
+}
+
+#wrap > section > #main > .main-menu > ul > li:nth-child(3) > a::before {
+  background-position: -100px 0;
+}
+
+#wrap > section > #main > .main-menu > ul > li:nth-child(4) > a::before {
+  background-position: -150px 0;
+}
+
+#wrap > section > #main > .main-menu > ul > li:nth-child(5) > a::before {
+  background-position: -200px 0;
+}
+
+#wrap > section > #main > .main-menu > ul > li:nth-child(1) > a:hover::before {
+  background-position: 0 -50px;
+}
+
+#wrap > section > #main > .main-menu > ul > li:nth-child(2) > a:hover::before {
+  background-position: -50px -50px;
+}
+
+#wrap > section > #main > .main-menu > ul > li:nth-child(3) > a:hover::before {
+  background-position: -100px -50px;
+}
+
+#wrap > section > #main > .main-menu > ul > li:nth-child(4) > a:hover::before {
+  background-position: -150px -50px;
+}
+
+#wrap > section > #main > .main-menu > ul > li:nth-child(5) > a:hover::before {
+  background-position: -200px -50px;
+}
+
+#wrap > section > #main > .main-menu > ul > li > a {
+  position: relative;
+  display: block;
+  width: 200px;
+  height: 200px;
+}
+
+#wrap > section > #main > .main-menu > ul > li > a:hover > span {
+  color: #fff;
+}
+
+#wrap > section > #main > .main-menu > ul > li > a > span {
+  display: block;
+  position: absolute;
+  width: 100%;
+  bottom: 3em;
+  color: #000;
+  font-size: 16px;
+  text-align: center;
+}
+
+#wrap > section > #main > .main-menu > ul > li > a:before {
+  position: absolute;
+  top: 3em;
+  left: 50%;
+  margin-left: -25px;
+  content: '';
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-image: url(./../images/sp_pur.webp);
+}
+
+#wrap > section > #main > a {
+  position: absolute;
+  font-size: 70px;
+  color: #fff;
+}
+
+#wrap > section > #main > a.next {
+  top: 50%;
+  right: 10%;
+  margin-top: -35px;
+}
+
+#wrap > section > #main > a.prev {
+  top: 50%;
+  left: 10%;
+  margin-top: -35px;
+}
+
+#wrap > section > #bestkia {
+  width: 100%;
+}
+
+#wrap > section > #bestkia > h2 {
+  height: 100px;
+  color: #05141f;
+  font-size: 40px;
+  text-align: center;
+  line-height: 100px;
+}
+
+#wrap > section > #bestkia > .slides {
+  overflow: hidden;
+  position: relative;
+  height: 400px;
+  width: 100%;
+}
+
+#wrap > section > #bestkia > .slides > .slides-container {
+  position: absolute;
+  left: -800px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 3000px;
+}
+
+#wrap > section > #bestkia > .slides > .slides-container > .slide {
+  width: calc(3000px / 6);
+}
+
+#wrap > section > #bestkia > .slides > .slides-container > .slide > a {
+  display: block;
+  color: #05141f;
+  text-align: center;
+  line-height: 1.4;
+}
+
+#wrap > section > #bestkia > .slides > .slides-container > .slide > a > .pic {
+  display: block;
+  width: 500px;
+}
+
+#wrap > section > #bestkia > .slides > .slides-container > .slide > a > .pic.on > img {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+#wrap > section > #bestkia > .slides > .slides-container > .slide > a > .pic > img {
+  display: block;
+  width: 500px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+#wrap > section > #bestkia > .slides > .slides-container > .slide > a > .pic > img:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+#wrap > section > #bestkia > .slides > .slides-container > .slide > a > .name {
+  display: block;
+  color: #05141f;
+  font-size: 25px;
+}
+
+#wrap > section > #bestkia > .slides > .slides-container > .slide > a > .detail {
+  font-size: 16px;
+}
+
+#wrap > section > #bestkia > .slides > .slides-container > .slide > a > .detail > strong {
+  font-weight: 800;
+  padding: 0 5px;
+}
+
+#wrap > section > #bestkia > .slides > .slides-container > .slide > a.mbship {
+  height: 20px;
+}
+
+#wrap > section > #bestkia > .slides > .slides-container > .slide > a.mbship > span {
+  font-size: 16px;
+}
+
+#wrap > section > #bestkia > .slides > .slides-container > .slide > a.mbship > span strong {
+  position: relative;
+  padding: 0 5px;
+}
+
+#wrap > section > #bestkia > .slides > .slides-container > .slide > a.mbship > span strong::before {
+  position: relative;
+  top: 3px;
+  left: -5px;
+  content: '';
+  display: inline-block;
+  width: 21px;
+  height: 14px;
+  background-image: url(./../images/ic_benefit.webp);
+}
+
+#wrap > section > #bestkia > .slides > .slides-container > .slide > a.mbship > span strong:after {
+  position: relative;
+  top: 2px;
+  right: -5px;
+  display: inline-block;
+  content: '';
+  width: 0;
+  height: 0;
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent transparent transparent #999;
 }
 /*# sourceMappingURL=style.css.map */

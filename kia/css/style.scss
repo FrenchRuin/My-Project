@@ -1,10 +1,41 @@
 @charset "utf-8";
 
+$main_color: #05141f;
+
 #wrap {
+	position: relative;
+	> .bgshadow {
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		width: 100%;
+		height: 400px;
+		background: linear-gradient(to bottom, rgba(5, 20, 31, 0.6) 0%, rgba(255, 255, 255, 0) 50%);
+	}
 	> header {
-		position: relative;
+		position: fixed;
 		width: 100%;
 		border-bottom: 1px solid #999;
+		z-index: 1000;
+		transition: all .3s;
+		&.down,
+		&:hover {
+			background-color: #fff;
+			> .h_bottom {
+				> .logo {
+					> a {
+						background-image: url(./../images/logo.webp);
+					}
+				}
+				> ul {
+					> li {
+						> a {
+							color: #05141f;
+						}
+					}
+				}
+			}
+		} // end of 스크롤시 nav 색변경
 
 		&::after {
 			position: absolute;
@@ -14,7 +45,7 @@
 			height: 30px;
 			content: '';
 			display: block;
-			background-color: #05141f;
+			background-color: $main_color;
 		}
 		.h_top {
 			display: flex;
@@ -32,6 +63,10 @@
 						border: none;
 					}
 					> a {
+						&:hover {
+							text-decoration: underline;
+							color: #fff;
+						}
 						display: block;
 						padding: 0 10px;
 						color: #9ba1a5;
@@ -48,6 +83,10 @@
 						border: none;
 					}
 					> a {
+						&:hover {
+							text-decoration: underline;
+							color: #fff;
+						}
 						display: block;
 						padding: 0 10px;
 						color: #9ba1a5;
@@ -64,27 +103,33 @@
 			width: 1440px;
 			margin: 0 auto;
 			padding: 30px 0;
+			// border: 1px solid #000;
 
-			&::after {
+			> .logo {
 				position: absolute;
+				left: 50%;
 				top: 50%;
-				right: 50%;
-				margin: -12px -50px 0 0;
+				margin: -12px 0 0 -50px;
 				width: 100px;
-				height: 24px;
-				content: '기아 - Movement that inspires | 기아 공식 사이트';
-				text-indent: -9999px;
-				background-image: url(./../images/logo.webp);
-				background-position: center center;
-				background-repeat: no-repeat;
+				> a {
+					display: block;
+					height: 24px;
+					text-indent: -9999px;
+					background-image: url(./../images/logo_w.webp);
+					background-position: center center;
+					background-repeat: no-repeat;
+				}
 			}
 			> .h_bottom_l {
 				display: flex;
 				> li {
 					> a {
+						&:hover {
+							text-decoration: underline;
+						}
 						display: block;
 						font-size: 18px;
-						// color: #fff;
+						color: #fff;
 						font-weight: 600;
 						padding: 0 10px;
 					}
@@ -94,8 +139,12 @@
 				display: flex;
 				> li {
 					> a {
-						padding-right: 10px;
+						&:hover {
+							text-decoration: underline;
+						}
 						display: block;
+						padding-right: 10px;
+						color: #fff;
 						font-size: 18px;
 						font-weight: 600;
 						padding: 0 10px;
@@ -104,7 +153,338 @@
 			} //end of .h_bottom_r
 		} //end of .h_bottom
 	} //end of header
+
 	> section {
+		width: 100%;
+		> #main {
+			position: relative;
+			width: 100%;
+			height: 1010px;
+			// overflow: hidden;
+			> .slides {
+				> div {
+					overflow: hidden;
+					display: none;
+					position: absolute;
+					width: 100%;
+					height: 1010px;
+
+					&.on {
+						display: block;
+					}
+					&.slide-1 {
+						> .slide-con {
+							> .title {
+								color: #fff;
+							}
+						}
+					}
+					&.slide-2 {
+						> .slide-con {
+							> .title {
+								color: #fff;
+							}
+						}
+					}
+
+					> .slide-con {
+						position: absolute;
+						z-index: 1;
+						left: 50%;
+						margin-left: -600px;
+						top: 150px;
+						width: 1200px;
+
+						> .title {
+							font-size: 38px;
+							text-align: center;
+							line-height: 1.4;
+							font-weight: 500;
+							color: $main_color;
+						}
+						> .more {
+							display: block;
+							width: 220px;
+							height: 30px;
+							margin: 20px auto 0;
+							color: #fff;
+							font-size: 20px;
+							font-weight: 600;
+							text-align: center;
+							line-height: 30px;
+							background-color: $main_color;
+							// border: 1px solid $main_color;
+
+							&:hover {
+								animation: title_light .5s;
+							}
+
+							@keyframes title_light {
+								0% {
+									background-color: $main_color;
+									color: #fff;
+								}
+								50% {
+									background-color: #fff;
+									color: $main_color;
+								}
+								100% {
+									background-color: $main_color;
+									color: #fff;
+								}
+							}
+						} //end of .more
+					} //end of .slide-con
+					> img {
+						display: block;
+					} //end of image
+				} //end of div
+			} //end of .slides
+			> .indicator {
+				display: flex;
+				position: absolute;
+				bottom: 250px;
+				left: 50%;
+				margin-left: -100px;
+				> ul {
+					display: flex;
+					justify-content: space-between;
+					width: 200px;
+					> li {
+						width: 14px;
+						background-color: #fff;
+						border: 1px solid #fff;
+
+						border-radius: 50%;
+						transition: all .2s;
+						&.on {
+							width: 60px;
+							background-color: $main_color;
+							border-radius: 10px;
+						}
+						> a {
+							// border: 1px solid #000;
+							display: block;
+							height: 14px;
+							text-indent: -9999px;
+						} //end of a
+					} //end of li
+				} //end of ul
+			} //end of .indicator
+			> .main-menu {
+				position: absolute;
+				bottom: 0;
+				left: 50%;
+				margin-left: -500px;
+				// border: 1px solid #000;
+				box-shadow: #05141f 1px 1px 5px;
+				> ul {
+					display: flex;
+					height: 200px;
+
+					> li {
+						position: relative;
+						width: 200px;
+						height: 200px;
+
+						background-color: #fff;
+						transition: all .2s;
+
+						&:hover {
+							background-color: $main_color;
+						}
+
+						&:nth-child(2) > a::before {
+							background-position: -50px 0;
+							&:hover {
+								background-position: -50px 50px;
+							}
+						}
+						&:nth-child(3) > a::before {
+							background-position: -100px 0;
+						}
+						&:nth-child(4) > a::before {
+							background-position: -150px 0;
+						}
+						&:nth-child(5) > a::before {
+							background-position: -200px 0;
+						}
+						&:nth-child(1) > a:hover {
+							&::before {
+								background-position: 0 -50px;
+							}
+						}
+						&:nth-child(2) > a:hover {
+							&::before {
+								background-position: -50px -50px;
+							}
+						}
+						&:nth-child(3) > a:hover {
+							&::before {
+								background-position: -100px -50px;
+							}
+						}
+						&:nth-child(4) > a:hover {
+							&::before {
+								background-position: -150px -50px;
+							}
+						}
+						&:nth-child(5) > a:hover {
+							&::before {
+								background-position: -200px -50px;
+							}
+						}
+
+						> a {
+							position: relative;
+							display: block;
+							width: 200px;
+							height: 200px;
+							&:hover > span {
+								color: #fff;
+							}
+							> span {
+								display: block;
+								position: absolute;
+								width: 100%;
+								bottom: 3em;
+
+								color: #000;
+								font-size: 16px;
+								text-align: center;
+							}
+
+							&:before {
+								position: absolute;
+								top: 3em;
+								left: 50%;
+								margin-left: -25px;
+								content: '';
+								display: block;
+								width: 50px;
+								height: 50px;
+
+								background-image: url(./../images/sp_pur.webp);
+								// background-position: ;
+							}
+						}
+					}
+				}
+			} //end of .main-menu
+			> a {
+				position: absolute;
+				font-size: 70px;
+				color: #fff;
+				&.next {
+					top: 50%;
+					right: 10%;
+					margin-top: -35px;
+				}
+				&.prev {
+					top: 50%;
+
+					left: 10%;
+					margin-top: -35px;
+				}
+			} //end of a(이전다음)
+		} //end of #main
+
+		> #bestkia {
+			width: 100%;
+			> h2 {
+				height: 100px;
+				color: $main_color;
+				font-size: 40px;
+				text-align: center;
+				line-height: 100px;
+			}
+			> .slides {
+				overflow: hidden;
+				position: relative;
+				height: 400px;
+				// border: 1px solid #000;
+				width: 100%;
+				> .slides-container {
+					position: absolute;
+					left: -800px;
+					display: flex;
+					justify-content: space-between;
+					width: 3000px;
+					> .slide {
+						width: calc(3000px / 6);
+						> a {
+							display: block;
+							color: $main_color;
+							text-align: center;
+							line-height: 1.4;
+							> .pic {
+								display: block;
+								width: 500px;
+
+								&.on > img {
+									transform: scale(1.2);
+								}
+								> img {
+									display: block;
+									width: 500px;
+									transition: all .3s;
+									&:hover {
+										transform: scale(1.1);
+									}
+								} //end of img
+							} //end of .pic
+							> .name {
+								display: block;
+								color: $main_color;
+								font-size: 25px;
+							} //end of .name
+							> .detail {
+								font-size: 16px;
+								> strong {
+									font-weight: 800;
+									padding: 0 5px;
+								}
+							} //end of .detail
+
+							&.mbship {
+								height: 20px;
+
+								> span {
+									font-size: 16px;
+									strong {
+										position: relative;
+										padding: 0 5px;
+										&::before {
+											position: relative;
+											top: 3px;
+											left: -5px;
+											content: '';
+											display: inline-block;
+											width: 21px;
+											height: 14px;
+
+											background-image: url(./../images/ic_benefit.webp);
+										}
+										&:after {
+											position: relative;
+											top: 2px;
+											right: -5px;
+											display: inline-block;
+											content: '';
+											width: 0;
+											height: 0;
+											border-width: 6px;
+											border-style: solid;
+											border-color: transparent transparent transparent #999;
+										}
+									}
+								}
+							}
+						} //end of a
+					} //end of .slide
+				} //end of .slides-container
+			} //end of .slides
+		} //end of #bestkia
 	} //end of section
 	> footer {
 	} //end of footer
