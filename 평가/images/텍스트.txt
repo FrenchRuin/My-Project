@@ -1,0 +1,102 @@
+/* 자동재생 버튼 */
+btn {
+	width: 20px;
+	height: 20px;
+	background-image: url(../images/icons.png);
+	background-position: -62px -24px;
+}
+
+btn.pause {
+	background-position: 0 -57px;
+}
+
+new_slide_img1
+	르꼬끄 스포르티브
+	EASY OFF로 입고 벗기 편하게
+	이지 브라탑(EZ-BRATOP) 출시
+
+new_slide_img2
+	르꼬끄 스포르티브
+	최적의 컨디션으로 완성된 초경량 자켓
+	에어로드(AIR ROAD) 출시
+
+new_slide_img3
+	르꼬끄 스포르티브
+	최상의 유연성으로 탄생한
+	‘Z-플로우’ 출시
+
+new_slide_img4
+	르꼬끄 스포르티브
+	나만의 스타일을 보여줄 수 있는
+	신학기 아이템, ‘키드니(KIDNEY)’ 출시
+
+new_slide_img5
+	르꼬끄 스포르티브,
+	스타일에 기능성을 가미한 신학기 백팩, ‘버디(BUDDY)’ 출시
+
+new_slide_img6
+	르꼬끄 스포르티브,
+	뛰어난 보온성과 내구성을 모두 잡은 ‘듀라썸’ 다운 출시
+
+new_slide_img7
+	다운 이탈 없이 가볍고 편안한 초경량 다운,
+	르꼬끄 라이트 튜브 다운 출시!
+
+new_slide_img8
+	르꼬끄 스포르티브
+	다운이탈 최소화한 초경량 다운,
+	라이트 튜브 다운 출시!
+
+new_slide_img9
+	르꼬끄, 최적의 트레이닝 밸런스를 제공하는
+	기능성 트레이닝화, 바게트코어 7.3 출시!
+
+new_slide_img10
+	르꼬끄, 어떤 종류의 운동에도 안정감 있게
+	가슴을 잡아주는 더블서포트시스템 브라탑 출시
+
+new_slide_img11
+	르꼬끄 스포르티브 
+	감각적인 디자인의 헤리티지 슈즈, 쿼츠(Quartz) 출시!
+
+new_slide_img12
+	르꼬끄 스포르티브, 해변에서의 탄탄한 바디라인을 완성해주는 워터핏수트 출시!
+
+new_slide_img13
+	르꼬끄스포르티브
+	사이클 저지의 재해석
+	‘시클리즘(CYCLISME)’ 컬렉션 공개
+
+new_slide_img14
+	르꼬끄스포르티브
+	FC서울 2018홈 유니폼 출시
+
+new_slide_img15
+	르꼬끄 스포르티브
+	어떤 무엇보다 뛰어난
+	엑셀로(EXCELLO)출시
+
+new_slide_img16
+	르꼬끄 스포르티브
+	홀리데이시즌 느낌 그대로 담은
+	‘레드에디션’ 출시
+
+new_slide_img17
+	르꼬끄 스포르티브
+	바운더리x 몰스킨
+	에디션 출시
+
+new_slide_img18
+	르꼬끄 스포르티브
+	다운 시리즈 ‘타이벡웍스' 출시
+	10/19~21 다운 팝업스토어 오픈
+
+new_slide_img19
+	르꼬끄 스포르티브
+	‘시티 사이클(CITY CYCLE)’
+	캠페인 전개
+
+new_slide_img20
+	르꼬끄 스포르티브
+	축구 헤리티지를 재해석한
+	‘판타지스(FANTAISIES)’트랙수트 출시!

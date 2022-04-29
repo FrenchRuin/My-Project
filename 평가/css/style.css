@@ -1,0 +1,173 @@
+#wrap .text-center {
+  height: 100px;
+  color: #000;
+  line-height: 100px;
+  text-align: center;
+}
+
+#wrap .slides {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  width: 1300px;
+  height: 400px;
+  margin: 0 auto;
+  border: 1px solid #ddd;
+  background-color: #f3f3f3;
+}
+
+#wrap .slides > .slides-btn {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #fff;
+}
+
+#wrap .slides > .slides-btn > a {
+  position: relative;
+  display: block;
+  width: 40px;
+  height: 40px;
+  text-indent: -9999px;
+}
+
+#wrap .slides > .slides-btn > a:after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -12px;
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  border-width: 12px;
+  border-style: solid;
+}
+
+#wrap .slides > .slides-btn > a.next::after {
+  margin-left: -6px;
+  border-color: transparent transparent transparent #000;
+}
+
+#wrap .slides > .slides-btn > a.prev:after {
+  margin-left: -18px;
+  border-color: transparent #000 transparent transparent;
+}
+
+#wrap .slides > .slides-contents {
+  position: relative;
+  width: 350px;
+  padding: 80px 50px;
+}
+
+#wrap .slides > .slides-contents > .news {
+  color: #000;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+#wrap .slides > .slides-contents .slides-detail {
+  position: relative;
+}
+
+#wrap .slides > .slides-contents .slides-detail > p {
+  display: none;
+  position: absolute;
+  line-height: 1.4;
+  color: #000;
+  font-size: 30px;
+  font-weight: 600;
+  margin: 30px 0;
+}
+
+#wrap .slides > .slides-contents .slides-detail > p.on {
+  display: block;
+}
+
+#wrap .slides > .slides-contents > .more {
+  position: absolute;
+  bottom: 50px;
+  color: #000;
+  font-weight: 600;
+}
+
+#wrap .slides > .slides-container {
+  position: relative;
+}
+
+#wrap .slides > .slides-container > .frame {
+  display: none;
+  position: absolute;
+  overflow: hidden;
+  width: 850px;
+  height: 400px;
+}
+
+#wrap .slides > .slides-container > .frame.on {
+  display: block;
+}
+
+#wrap .slides > .slides-container > .frame > img {
+  display: block;
+  height: 400px;
+  width: 850px;
+}
+
+#wrap .slides > .indicator {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  margin-left: -110px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#wrap .slides > .indicator > ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 200px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#wrap .slides > .indicator > ul > li {
+  width: 18px;
+}
+
+#wrap .slides > .indicator > ul > li.on > a {
+  background-position: 0 -18px;
+}
+
+#wrap .slides > .indicator > ul > li > a {
+  display: block;
+  height: 18px;
+  text-indent: -9999px;
+  background-image: url(./../images/bul.png);
+}
+
+#wrap .slides > .indicator > .auto {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin-left: 8px;
+  text-indent: -9999px;
+  background-image: url(./../images/icons.png);
+  background-position: -62px -24px;
+}
+
+#wrap .slides > .indicator > .auto.paused {
+  background-position: 0 -57px;
+}
+
+#wrap > address {
+  height: 100px;
+  color: #000;
+  line-height: 100px;
+  text-align: center;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,155 @@
+@charset "utf-8";
+
+#wrap {
+	.text-center {
+		height: 100px;
+		color: #000;
+		line-height: 100px;
+		text-align: center;
+	}
+	.slides {
+		display: flex;
+		position: relative;
+		width: 1300px;
+		height: 400px;
+		margin: 0 auto;
+		border: 1px solid #ddd;
+		background-color: #f3f3f3;
+		> .slides-btn {
+			position: absolute;
+			display: flex;
+			background-color: #fff;
+			> a {
+				position: relative;
+				display: block;
+				width: 40px;
+				height: 40px;
+				// border: 1px solid #000;
+				text-indent: -9999px;
+				&:after {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+
+					margin-top: -12px;
+
+					display: block;
+					width: 0;
+					height: 0;
+
+					content: '';
+					border-width: 12px;
+					border-style: solid;
+				}
+				&.next {
+					&::after {
+						margin-left: -6px;
+						border-color: transparent transparent transparent #000;
+					}
+				}
+				&.prev {
+					&:after {
+						margin-left: -18px;
+						border-color: transparent #000 transparent transparent;
+					}
+				}
+			}
+		} //end of .slides-btn
+		> .slides-contents {
+			position: relative;
+			width: 350px;
+			padding: 80px 50px;
+			> .news {
+				color: #000;
+				font-size: 16px;
+				font-weight: 600;
+			}
+			.slides-detail {
+				position: relative;
+				> p {
+					&.on {
+						display: block;
+					}
+					display: none;
+					position: absolute;
+					line-height: 1.4;
+					color: #000;
+					font-size: 30px;
+					font-weight: 600;
+					margin: 30px 0;
+				}
+			} //end of .slides-detail
+			> .more {
+				position: absolute;
+				bottom: 50px;
+				color: #000;
+				font-weight: 600;
+			}
+		} //end of .slides-contents
+		> .slides-container {
+			position: relative;
+			> .frame {
+				&.on {
+					display: block;
+				}
+				display: none;
+				position: absolute;
+				overflow: hidden;
+				width: 850px;
+				height: 400px;
+
+				> img {
+					display: block;
+					height: 400px;
+					width: 850px;
+				}
+			}
+		} //end of .slides-container
+		> .indicator {
+			position: absolute;
+			bottom: 10px;
+			left: 50%;
+			margin-left: -110px;
+			display: flex;
+			> ul {
+				display: flex;
+				width: 200px;
+				justify-content: space-between;
+
+				> li {
+					width: 18px;
+					&.on > a {
+						background-position: 0 -18px;
+					}
+					> a {
+						display: block;
+						height: 18px;
+						text-indent: -9999px;
+						background-image: url(./../images/bul.png);
+					}
+				}
+			}
+			> .auto {
+				display: block;
+				width: 20px;
+				height: 20px;
+				margin-left: 8px;
+				text-indent: -9999px;
+
+				background-image: url(./../images/icons.png);
+				background-position: -62px -24px;
+
+				&.paused {
+					background-position: 0 -57px;
+				}
+			}
+		} //end of .indicator
+	} //end of .slides
+
+	> address {
+		height: 100px;
+		color: #000;
+		line-height: 100px;
+		text-align: center;
+	}
+} //end of #wrap
