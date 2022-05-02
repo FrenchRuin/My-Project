@@ -5,6 +5,8 @@ $(function () {
   const $next = $('.next')
   const $prev = $('.prev')
 
+  const $arrow = $('.arrow')
+
   let nowIdx = 0;
 
 
@@ -39,4 +41,29 @@ $(function () {
     }, 5000)
   })
 
+  $arrow.on('click', function (evt) {
+    evt.preventDefault();
+
+    $(this).toggleClass('up')
+  })
+
+
+
+  // 전체메뉴
+
+  const $allMnu = $('.all_menu')
+  const $close = $('.close')
+  const $shadow = $('.mnu_shadow')
+
+  $allMnu.on('click', function (evt) {
+    evt.preventDefault();
+    $('.mnubox').removeClass('off')
+    $shadow.addClass('on')
+
+  })
+  $close.on('click', function (evt) {
+    evt.preventDefault();
+    $('.mnubox').addClass('off')
+    $shadow.removeClass('on')
+  })
 })
