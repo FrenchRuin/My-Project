@@ -459,7 +459,7 @@
 
 #wrap > section > #bestkia > .slides > .slides-container {
   position: absolute;
-  left: -800px;
+  left: -300px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -485,11 +485,6 @@
   width: 500px;
 }
 
-#wrap > section > #bestkia > .slides > .slides-container > .slide > a > .pic.on > img {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-}
-
 #wrap > section > #bestkia > .slides > .slides-container > .slide > a > .pic > img {
   display: block;
   width: 500px;
@@ -498,8 +493,8 @@
 }
 
 #wrap > section > #bestkia > .slides > .slides-container > .slide > a > .pic > img:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 #wrap > section > #bestkia > .slides > .slides-container > .slide > a > .name {
@@ -552,5 +547,27 @@
   border-width: 6px;
   border-style: solid;
   border-color: transparent transparent transparent #999;
+}
+
+#wrap > section > #bestkia > .slides > a {
+  position: absolute;
+  top: 120px;
+  display: block;
+  width: 40px;
+  height: 40px;
+  text-indent: -9999px;
+  border: 1px solid #000;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+#wrap > section > #bestkia > .slides > a.best_next {
+  right: 200px;
+  border-color: #000 #000 transparent transparent;
+}
+
+#wrap > section > #bestkia > .slides > a.best_prev {
+  left: 200px;
+  border-color: transparent transparent #000 #000;
 }
 /*# sourceMappingURL=style.css.map */

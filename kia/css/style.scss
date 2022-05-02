@@ -406,7 +406,7 @@ $main_color: #05141f;
 				width: 100%;
 				> .slides-container {
 					position: absolute;
-					left: -800px;
+					left: -300px;
 					display: flex;
 					justify-content: space-between;
 					width: 3000px;
@@ -421,15 +421,12 @@ $main_color: #05141f;
 								display: block;
 								width: 500px;
 
-								&.on > img {
-									transform: scale(1.2);
-								}
 								> img {
 									display: block;
 									width: 500px;
 									transition: all .3s;
 									&:hover {
-										transform: scale(1.1);
+										transform: scale(1.2);
 									}
 								} //end of img
 							} //end of .pic
@@ -483,6 +480,27 @@ $main_color: #05141f;
 						} //end of a
 					} //end of .slide
 				} //end of .slides-container
+
+				> a {
+					position: absolute;
+
+					top: 120px;
+					display: block;
+					width: 40px;
+					height: 40px;
+					text-indent: -9999px;
+					border: 1px solid #000;
+					transform: rotate(45deg);
+					&.best_next {
+						right: 200px;
+
+						border-color: #000 #000 transparent transparent;
+					}
+					&.best_prev {
+						left: 200px;
+						border-color: transparent transparent #000 #000;
+					}
+				}
 			} //end of .slides
 		} //end of #bestkia
 	} //end of section
