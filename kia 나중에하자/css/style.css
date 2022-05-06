@@ -570,4 +570,78 @@
   left: 200px;
   border-color: transparent transparent #000 #000;
 }
+
+#wrap > section > #event {
+  position: relative;
+  width: 100%;
+  height: 800px;
+  border: 1px solid #000;
+}
+
+#wrap > section > #event > .event {
+  position: absolute;
+  left: 50px;
+}
+
+#wrap > section > #event > .event > h2 {
+  font-size: 40px;
+  color: #05141f;
+  margin-bottom: 20px;
+}
+
+#wrap > section > #event > .event > .slides {
+  position: relative;
+}
+
+#wrap > section > #event > .event > .slides > .slides-container > .slide {
+  display: block;
+  position: absolute;
+  -webkit-box-shadow: 20px 20px 15px 0 rgba(0, 0, 0, 0.01);
+          box-shadow: 20px 20px 15px 0 rgba(0, 0, 0, 0.01);
+}
+
+#wrap > section > #event > .event > .slides > .slides-container > .slide > span {
+  display: block;
+  color: #05141f;
+  line-height: 2;
+}
+
+#wrap > section > #event > .event > .slides > .slides-container > .slide > span.pic {
+  width: 700px;
+}
+
+#wrap > section > #event > .event > .slides > .slides-container > .slide > span.pic:after {
+  position: absolute;
+  top: 5%;
+  left: 11.4%;
+  display: block;
+  content: '';
+  z-index: -1;
+  width: 100%;
+  height: 70%;
+  background: rgba(5, 20, 31, 0.003);
+}
+
+#wrap > section > #event > .event > .slides > .slides-container > .slide > span.pic > img {
+  display: block;
+  height: 410px;
+}
+
+#wrap > section > #event > .event > .slides > .slides-container > .slide > span.title {
+  margin-top: 50px;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+#wrap > section > #event > .event > .slides > a {
+  display: block;
+  position: absolute;
+  top: 50%;
+  margin-top: -20px;
+}
+
+#wrap > section > #event > .event > .slides > a > i {
+  font-size: 40px;
+  color: #05141f;
+}
 /*# sourceMappingURL=style.css.map */

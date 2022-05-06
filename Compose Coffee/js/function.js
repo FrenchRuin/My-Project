@@ -20,12 +20,14 @@ $(function () {
   $mnuBtn.on('click', function (evt) {
     evt.preventDefault();
 
-    $all_menu.slideDown(100, 'linear');
+    $all_menu.slideDown();
+
+
   });
 
   $mnuBtnClose.on('click', function (evt) {
     evt.preventDefault();
-    $all_menu.slideUp(100, 'linear');
+    $all_menu.slideUp();
   })
 
   // 숫자 증가 애니메이션

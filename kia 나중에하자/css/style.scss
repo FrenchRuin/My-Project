@@ -503,6 +503,77 @@ $main_color: #05141f;
 				}
 			} //end of .slides
 		} //end of #bestkia
+
+		> #event {
+			position: relative;
+			width: 100%;
+			height: 800px;
+			border: 1px solid #000;
+			> .event {
+				position: absolute;
+				left: 50px;
+				> h2 {
+					font-size: 40px;
+					color: $main_color;
+					margin-bottom: 20px;
+				}
+				> .slides {
+					position: relative;
+
+					> .slides-container {
+						> .slide {
+							display: block;
+							position: absolute;
+							// background-color: #fff;
+							box-shadow: 20px 20px 15px 0 rgba(0, 0, 0, 0.01);
+
+							> span {
+								display: block;
+								color: $main_color;
+								line-height: 2;
+								&.pic {
+									// border: 1px solid #000;
+									width: 700px;
+
+									&:after {
+										position: absolute;
+										top: 5%;
+										left: 11.4%;
+										display: block;
+										content: '';
+										z-index: -1;
+										width: 100%;
+										height: 70%;
+										background: rgba(5, 20, 31, 0.003);
+									}
+									> img {
+										display: block;
+										height: 410px;
+									}
+								}
+								&.title {
+									margin-top: 50px;
+									font-size: 25px;
+									font-weight: 600;
+								}
+								&.date {
+								}
+							}
+						}
+					} //end of .slides-container
+					> a {
+						display: block;
+						position: absolute;
+						top: 50%;
+						margin-top: -20px;
+						> i {
+							font-size: 40px;
+							color: #05141f;
+						}
+					}
+				} //end of .slides
+			} //end of .event
+		} //#event
 	} //end of section
 	> footer {
 	} //end of footer

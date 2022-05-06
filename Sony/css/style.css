@@ -43,7 +43,7 @@ body #wrap header > nav {
 }
 
 body #wrap header > nav > .gnb {
-  position: relative;
+  position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -52,7 +52,7 @@ body #wrap header > nav > .gnb {
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
   height: 80px;
-  z-index: 200;
+  background-color: #000;
 }
 
 body #wrap header > nav > .gnb > li {
